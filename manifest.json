@@ -1,0 +1,17 @@
+{
+  "name": "RevLearn",
+  "short_name": "RevLearn",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "Plateforme d'apprentissage ouverte et minimaliste",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

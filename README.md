@@ -50,5 +50,5 @@ Ce projet est open-source ! Vous pouvez ajouter de nouveaux cours en clonant par
 
 ---
 <div align="center">
-  <em>Fait avec passion 💻 Code épuré & Design de qualité</em>
+  <em>Fait avec passion - Code épuré & Design de qualité</em>
 </div>

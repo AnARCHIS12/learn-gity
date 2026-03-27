@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cours JavaScript Moderne</title>
+  <title>Cours Introduction API REST</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
@@ -68,22 +69,20 @@
     .content ul, .content ol { color: var(--text-muted); margin-left: 20px; margin-bottom: 24px; }
     .content li { margin-bottom: 8px; }
 
-    /* Code Blocks */
-    pre { background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; color: var(--text-main); }
-    code { font-family: 'JetBrains Mono', monospace; background-color: var(--bg-surface); border: 1px solid var(--border); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.85em; color: var(--text-main); }
-    pre code { background-color: transparent; border: none; padding: 0; color: inherit; font-size: 1em; }
-    .comment { color: var(--text-light); }
-    .keyword { color: #8b5cf6; } /* purple */
-    .function { color: #3b82f6; } /* blue */
-    .string { color: #22c55e; } /* green */
-    .variable { color: #eab308; } /* yellow */
-
     /* Grid & Cards */
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
     .card { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; background-color: var(--bg); transition: border-color 0.2s; }
     .card:hover { border-color: #d1d5db; }
     .card h3 { margin-top: 0; font-size: 1.05rem; color: var(--text-main); }
     .card p { margin-bottom: 0; font-size: 0.95rem; }
+
+    /* Code Blocks */
+    pre { background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; color: var(--text-main); }
+    code { font-family: 'JetBrains Mono', monospace; background-color: var(--bg-surface); border: 1px solid var(--border); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.85em; color: var(--text-main); }
+    pre code { background-color: transparent; border: none; padding: 0; color: inherit; font-size: 1em; }
+    .comment { color: var(--text-light); }
+    .method { font-weight: 700; color: #f59e0b; }
+    .url { color: #3b82f6; }
 
     footer { border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 60px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
   </style>
@@ -100,8 +99,8 @@
       </a>
       <div class="nav-links">
         <a href="index.html">Catalogue</a>
-        <a href="cours-html.html">HTML/CSS</a>
-        <a href="cours-js.html" style="color: var(--text-main); font-weight: 600;">JavaScript</a>
+        <a href="cours-js.html">Développement Web</a>
+        <a href="#" style="color: var(--text-main); font-weight: 600;">API HTTP</a>
       </div>
     </div>
   </nav>
@@ -110,100 +109,68 @@
     <aside class="sidebar">
       <h4>Sommaire</h4>
       <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#variables">Variables (ES6)</a>
-        <a href="#fonctions">Fonctions</a>
-        <a href="#dom">Interaction DOM</a>
-        <a href="#exercices">Entraînement</a>
-      </nav>
-      
-      <h4 style="margin-top: 40px;">Raccourcis</h4>
-      <nav>
-        <a href="#"><code>const</code> / <code>let</code></a>
-        <a href="#"><code>() =&gt; {}</code></a>
-        <a href="#"><code>querySelector</code></a>
+        <a href="#introduction">Le web est un restaurant</a>
+        <a href="#methodes">Méthodes HTTP</a>
+        <a href="#json">Le dialecte JSON</a>
+        <a href="#erreurs">Codes statuts (Erreurs)</a>
       </nav>
     </aside>
 
     <main class="content">
       <header id="introduction">
-        <h1>JavaScript Moderne (ES6+)</h1>
-        <p class="lead">Donnez vie à vos interfaces. JavaScript est le langage de programmation incontournable du navigateur, permettant de gérer l'interactivité, de contacter des serveurs et d'animer vos pages.</p>
+        <h1>Introduction API REST</h1>
+        <p class="lead">Le développement Backend repose sur les API (Application Programming Interface), qui permettent de faire le lien entre vos données sécurisées et vos utilisateurs web.</p>
       </header>
       
-      <section id="variables">
-        <h2>Variables et Constantes</h2>
-        <p>En JavaScript moderne (ES6+), l'utilisation du mot-clé <code>var</code> est fortement déconseillée afin d'éviter les effets de bord indésirables.</p>
+      <section id="methodes">
+        <h2>L'analogie du restaurant</h2>
+        <p>Le Client (navigateur) est le client du restaurant. Le Serveur est le cuisinier. L'API est le serveur en salle : il prend la commande, la confie à la cuisine et ramène l'assiette au client.</p>
         
+        <h3>Les requêtes REST standards</h3>
+        <p>Toute base de données peut être manipulée via 4 opérations CRUD (Create, Read, Update, Delete) reliées aux commandes réseau HTTP.</p>
+
         <div class="grid-2">
           <div class="card">
-            <h3>const</h3>
-            <p>Déclare une variable dont la référence ne changera jamais. C'est l'option recommandée par défaut 95% du temps.</p>
+            <h3>GET</h3>
+            <p>Demande au serveur de *lire* simplement les données pour vous les renvoyer.</p>
           </div>
           <div class="card">
-            <h3>let</h3>
-            <p>Déclare une variable qui sera modifiée ou réaffectée plus tard dans l'exécution de votre script (ex: compteurs de boucle).</p>
+            <h3>POST</h3>
+            <p>Envoie de toutes nouvelles données au serveur pour *créer* un document.</p>
+          </div>
+          <div class="card">
+            <h3>PUT / PATCH</h3>
+            <p>Indique au serveur de modifier ou *mettre à jour* une donnée existante.</p>
+          </div>
+          <div class="card">
+            <h3>DELETE</h3>
+            <p>Demande au serveur la suppression brute des ressources ciblées.</p>
           </div>
         </div>
-
-<pre><span class="comment">// Bonne pratique (ES6+)</span>
-<span class="keyword">const</span> <span class="variable">prenom</span> = <span class="string">"Alice"</span>;
-<span class="keyword">let</span> <span class="variable">age</span> = <span class="string">25</span>;
-<span class="variable">age</span> = <span class="string">26</span>; <span class="comment">// Valide</span>
-<span class="comment">// prenom = "Bob"; // Jeterait une erreur bloquante</span></pre>
       </section>
 
-      <section id="fonctions">
-        <h2>Déclaration de fonctions</h2>
-        <p>Les fonctions encadrent votre logique. Avec l'arrivée des "fonctions fléchées" (arrow functions), le langage s'est considérablement épuré.</p>
-
-<pre><span class="comment">// Déclaration standard (historique)</span>
-<span class="keyword">function</span> <span class="function">saluer</span>(<span class="variable">nom</span>) {
-  <span class="keyword">return</span> <span class="string">"Bonjour "</span> + <span class="variable">nom</span>;
-}
-
-<span class="comment">// Déclaration moderne (Arrow function avec template littéral)</span>
-<span class="keyword">const</span> <span class="function">saluerModerne</span> = (<span class="variable">nom</span>) =&gt; {
-  <span class="keyword">return</span> <span class="string">`Bonjour ${nom}`</span>;
-};
-
-<span class="comment">// L'arrow function permet même des retours implicites :</span>
-<span class="keyword">const</span> <span class="function">multiplier</span> = (<span class="variable">a</span>, <span class="variable">b</span>) =&gt; <span class="variable">a</span> * <span class="variable">b</span>;</pre>
-      </section>
-
-      <section id="dom">
-        <h2>Manipulation du DOM</h2>
-        <p>Le <strong>Document Object Model (DOM)</strong> est la représentation HTML chargée par le navigateur. JavaScript permet d'interagir avec et de la modifier en direct.</p>
+      <section id="json">
+        <h2>Le format JSON</h2>
+        <p>Les serveurs et les interfaces discutent généralement dans un format extrêmement simple, composé de clés et de valeurs : le format de fichier JSON (JavaScript Object Notation).</p>
         
-        <div class="grid-2">
-          <div class="card">
-            <h3>Sélectionner</h3>
-            <p>Utilisez l'omniprésent <code>document.querySelector('.ma-classe')</code> pour récupérer le premier élément qui correspond à un sélecteur CSS précis.</p>
-          </div>
-          <div class="card">
-            <h3>Agir</h3>
-            <p>Manipulez ses classes, son contenu texte, ou ajoutez des écouteurs d'événements pour réagir aux clics avec <code>addEventListener</code>.</p>
-          </div>
-        </div>
-
-<pre><span class="comment">// Cible le bouton dans mon HTML</span>
-<span class="keyword">const</span> <span class="variable">bouton</span> = <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'.action-btn'</span>);
-
-<span class="comment">// Je déclenche un code quand l'utilisateur clique dessus</span>
-<span class="variable">bouton</span>.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
-  <span class="variable">document</span>.<span class="variable">body</span>.<span class="variable">classList</span>.<span class="function">toggle</span>(<span class="string">'dark-mode'</span>);
-});</pre>
+<pre><span class="comment">// Réponse typique d'une API à une requête GET /users/1</span>
+{
+  "id": 1,
+  "nom": "Dupont",
+  "prenom": "Alice",
+  "role": "Admin",
+  "verifie": true
+}</pre>
       </section>
 
-      <section id="exercices">
-        <h2>Entraînement</h2>
-        <p>Mettez en pratique vos connaissances JavaScript :</p>
-        <ol>
-          <li>Dans un fichier HTML, créez un bouton "Afficher Alerte".</li>
-          <li>Dans une balise <code>&lt;script&gt;</code> en fin de fichier, récupérez ce bouton via un sélecteur.</li>
-          <li>Attachez-y un événement "click".</li>
-          <li>Faites en sorte qu'une modale s'affiche avec <code>alert("Cliqué !")</code> au moment de l'action.</li>
-        </ol>
+      <section id="erreurs">
+        <h2>Les Codes d'État (HTTP Status Codes)</h2>
+        <p>À chaque fin de cycle, le serveur renvoie un code chiffré permettant à la machine client de savoir si tout s'est bien passé.</p>
+        <ul>
+          <li><strong>2xx (Succès) :</strong> <code>200 OK</code> signifie que l'opération a réussi, <code>201 Created</code> qu'une ressource (compte, objet) a bien été générée.</li>
+          <li><strong>4xx (Erreur client) :</strong> <code>400 Bad Request</code> quand la donnée envoyée est corrompue, <code>404 Not Found</code> quand l'adresse API n'existe pas ou <code>401 Unauthorized</code> si on n'a pas les droits requis.</li>
+          <li><strong>5xx (Erreur serveur) :</strong> <code>500 Internal Server Error</code> prouve de manière indéniable que la faute incombe au développeur backend : l'application qui gère la base a complètement planté.</li>
+        </ul>
       </section>
 
     </main>

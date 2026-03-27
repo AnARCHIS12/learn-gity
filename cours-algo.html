@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cours JavaScript Moderne</title>
+  <title>Cours Algorithmique</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -68,22 +68,21 @@
     .content ul, .content ol { color: var(--text-muted); margin-left: 20px; margin-bottom: 24px; }
     .content li { margin-bottom: 8px; }
 
-    /* Code Blocks */
-    pre { background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; color: var(--text-main); }
-    code { font-family: 'JetBrains Mono', monospace; background-color: var(--bg-surface); border: 1px solid var(--border); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.85em; color: var(--text-main); }
-    pre code { background-color: transparent; border: none; padding: 0; color: inherit; font-size: 1em; }
-    .comment { color: var(--text-light); }
-    .keyword { color: #8b5cf6; } /* purple */
-    .function { color: #3b82f6; } /* blue */
-    .string { color: #22c55e; } /* green */
-    .variable { color: #eab308; } /* yellow */
-
     /* Grid & Cards */
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
     .card { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; background-color: var(--bg); transition: border-color 0.2s; }
     .card:hover { border-color: #d1d5db; }
     .card h3 { margin-top: 0; font-size: 1.05rem; color: var(--text-main); }
     .card p { margin-bottom: 0; font-size: 0.95rem; }
+
+    /* Code Blocks */
+    pre { background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; color: var(--text-main); }
+    code { font-family: 'JetBrains Mono', monospace; background-color: var(--bg-surface); border: 1px solid var(--border); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.85em; color: var(--text-main); }
+    pre code { background-color: transparent; border: none; padding: 0; color: inherit; font-size: 1em; }
+    .comment { color: var(--text-light); }
+    .keyword { color: #8b5cf6; } /* purple */
+    .control { color: #ec4899; } /* pink */
+    .variable { color: #3b82f6; } /* blue */
 
     footer { border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 60px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
   </style>
@@ -100,8 +99,7 @@
       </a>
       <div class="nav-links">
         <a href="index.html">Catalogue</a>
-        <a href="cours-html.html">HTML/CSS</a>
-        <a href="cours-js.html" style="color: var(--text-main); font-weight: 600;">JavaScript</a>
+        <a href="#" style="color: var(--text-main); font-weight: 600;">Algorithmique</a>
       </div>
     </div>
   </nav>
@@ -110,100 +108,54 @@
     <aside class="sidebar">
       <h4>Sommaire</h4>
       <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#variables">Variables (ES6)</a>
-        <a href="#fonctions">Fonctions</a>
-        <a href="#dom">Interaction DOM</a>
-        <a href="#exercices">Entraînement</a>
-      </nav>
-      
-      <h4 style="margin-top: 40px;">Raccourcis</h4>
-      <nav>
-        <a href="#"><code>const</code> / <code>let</code></a>
-        <a href="#"><code>() =&gt; {}</code></a>
-        <a href="#"><code>querySelector</code></a>
+        <a href="#introduction">La logique</a>
+        <a href="#variables">Variables et Mémoire</a>
+        <a href="#conditions">Conditions & Boucles</a>
+        <a href="#complexite">Complexité</a>
       </nav>
     </aside>
 
     <main class="content">
       <header id="introduction">
-        <h1>JavaScript Moderne (ES6+)</h1>
-        <p class="lead">Donnez vie à vos interfaces. JavaScript est le langage de programmation incontournable du navigateur, permettant de gérer l'interactivité, de contacter des serveurs et d'animer vos pages.</p>
+        <h1>Logique & Algorithmique</h1>
+        <p class="lead">Apprendre un langage de programmation ne sert à rien si vous ne savez pas concevoir une suite logique d'instructions pour résoudre un problème.</p>
       </header>
       
       <section id="variables">
-        <h2>Variables et Constantes</h2>
-        <p>En JavaScript moderne (ES6+), l'utilisation du mot-clé <code>var</code> est fortement déconseillée afin d'éviter les effets de bord indésirables.</p>
+        <h2>Variables et Mémoire</h2>
+        <p>Un algorithme prend toujours des données en entrée (un nom, un âge, une base de clients), les traite en mémoire temporaire, puis renvoie un résultat (sortie).</p>
         
         <div class="grid-2">
           <div class="card">
-            <h3>const</h3>
-            <p>Déclare une variable dont la référence ne changera jamais. C'est l'option recommandée par défaut 95% du temps.</p>
+            <h3>Type Entier / Float</h3>
+            <p>Sert à effectuer des calculs mathématiques, stocker des identifiants exacts ou mesurer des statistiques.</p>
           </div>
           <div class="card">
-            <h3>let</h3>
-            <p>Déclare une variable qui sera modifiée ou réaffectée plus tard dans l'exécution de votre script (ex: compteurs de boucle).</p>
+            <h3>Type Chaîne (String)</h3>
+            <p>Sert à stocker du texte et des phrases. On manipulera souvent des opérations de concaténation (assemblage).</p>
           </div>
         </div>
-
-<pre><span class="comment">// Bonne pratique (ES6+)</span>
-<span class="keyword">const</span> <span class="variable">prenom</span> = <span class="string">"Alice"</span>;
-<span class="keyword">let</span> <span class="variable">age</span> = <span class="string">25</span>;
-<span class="variable">age</span> = <span class="string">26</span>; <span class="comment">// Valide</span>
-<span class="comment">// prenom = "Bob"; // Jeterait une erreur bloquante</span></pre>
       </section>
 
-      <section id="fonctions">
-        <h2>Déclaration de fonctions</h2>
-        <p>Les fonctions encadrent votre logique. Avec l'arrivée des "fonctions fléchées" (arrow functions), le langage s'est considérablement épuré.</p>
-
-<pre><span class="comment">// Déclaration standard (historique)</span>
-<span class="keyword">function</span> <span class="function">saluer</span>(<span class="variable">nom</span>) {
-  <span class="keyword">return</span> <span class="string">"Bonjour "</span> + <span class="variable">nom</span>;
-}
-
-<span class="comment">// Déclaration moderne (Arrow function avec template littéral)</span>
-<span class="keyword">const</span> <span class="function">saluerModerne</span> = (<span class="variable">nom</span>) =&gt; {
-  <span class="keyword">return</span> <span class="string">`Bonjour ${nom}`</span>;
-};
-
-<span class="comment">// L'arrow function permet même des retours implicites :</span>
-<span class="keyword">const</span> <span class="function">multiplier</span> = (<span class="variable">a</span>, <span class="variable">b</span>) =&gt; <span class="variable">a</span> * <span class="variable">b</span>;</pre>
-      </section>
-
-      <section id="dom">
-        <h2>Manipulation du DOM</h2>
-        <p>Le <strong>Document Object Model (DOM)</strong> est la représentation HTML chargée par le navigateur. JavaScript permet d'interagir avec et de la modifier en direct.</p>
+      <section id="conditions">
+        <h2>Conditions et Boucles</h2>
+        <p>Le code s'exécute linéairement. Les conditions et boucles sont les seuls moyens de "casser" cette ligne droite pour effectuer des choix ou des tâches répétitives.</p>
         
-        <div class="grid-2">
-          <div class="card">
-            <h3>Sélectionner</h3>
-            <p>Utilisez l'omniprésent <code>document.querySelector('.ma-classe')</code> pour récupérer le premier élément qui correspond à un sélecteur CSS précis.</p>
-          </div>
-          <div class="card">
-            <h3>Agir</h3>
-            <p>Manipulez ses classes, son contenu texte, ou ajoutez des écouteurs d'événements pour réagir aux clics avec <code>addEventListener</code>.</p>
-          </div>
-        </div>
+<pre><span class="comment">// Pseudo-code algorithmique universel</span>
+<span class="keyword">SI</span> <span class="variable">utilisateur.age</span> <span class="control">&gt;=</span> 18 <span class="keyword">ALORS</span>
+  <span class="control">afficher</span>("Accès autorisé")
+<span class="keyword">SINON</span>
+  <span class="control">afficher</span>("Accès refusé")
+<span class="keyword">FIN SI</span>
 
-<pre><span class="comment">// Cible le bouton dans mon HTML</span>
-<span class="keyword">const</span> <span class="variable">bouton</span> = <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'.action-btn'</span>);
-
-<span class="comment">// Je déclenche un code quand l'utilisateur clique dessus</span>
-<span class="variable">bouton</span>.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
-  <span class="variable">document</span>.<span class="variable">body</span>.<span class="variable">classList</span>.<span class="function">toggle</span>(<span class="string">'dark-mode'</span>);
-});</pre>
+<span class="keyword">POUR CHAQUE</span> <span class="variable">client</span> <span class="keyword">DANS</span> <span class="variable">liste_de_clients</span> <span class="keyword">FAIRE</span>
+  <span class="control">envoyer_email</span>(client)
+<span class="keyword">FIN POUR</span></pre>
       </section>
 
-      <section id="exercices">
-        <h2>Entraînement</h2>
-        <p>Mettez en pratique vos connaissances JavaScript :</p>
-        <ol>
-          <li>Dans un fichier HTML, créez un bouton "Afficher Alerte".</li>
-          <li>Dans une balise <code>&lt;script&gt;</code> en fin de fichier, récupérez ce bouton via un sélecteur.</li>
-          <li>Attachez-y un événement "click".</li>
-          <li>Faites en sorte qu'une modale s'affiche avec <code>alert("Cliqué !")</code> au moment de l'action.</li>
-        </ol>
+      <section id="complexite">
+        <h2>Big-O et Complexité</h2>
+        <p>L'algorithmique permet d'écrire du code rapide. Une double boucle imbriquée (<code>O(N²)</code>) prendra 100 fois plus de temps qu'une simple boucle (<code>O(N)</code>) si vous traitez 10 éléments, mais 1 000 000 de fois plus si vous traitez 1000 éléments !</p>
       </section>
 
     </main>

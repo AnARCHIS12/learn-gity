@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cours JavaScript Moderne</title>
+  <title>Cours Fondations UI/UX</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -68,22 +68,17 @@
     .content ul, .content ol { color: var(--text-muted); margin-left: 20px; margin-bottom: 24px; }
     .content li { margin-bottom: 8px; }
 
-    /* Code Blocks */
-    pre { background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; color: var(--text-main); }
-    code { font-family: 'JetBrains Mono', monospace; background-color: var(--bg-surface); border: 1px solid var(--border); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.85em; color: var(--text-main); }
-    pre code { background-color: transparent; border: none; padding: 0; color: inherit; font-size: 1em; }
-    .comment { color: var(--text-light); }
-    .keyword { color: #8b5cf6; } /* purple */
-    .function { color: #3b82f6; } /* blue */
-    .string { color: #22c55e; } /* green */
-    .variable { color: #eab308; } /* yellow */
-
     /* Grid & Cards */
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
     .card { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; background-color: var(--bg); transition: border-color 0.2s; }
     .card:hover { border-color: #d1d5db; }
     .card h3 { margin-top: 0; font-size: 1.05rem; color: var(--text-main); }
     .card p { margin-bottom: 0; font-size: 0.95rem; }
+
+    /* Code Blocks */
+    pre { background-color: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; overflow-x: auto; margin: 24px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; color: var(--text-main); }
+    code { font-family: 'JetBrains Mono', monospace; background-color: var(--bg-surface); border: 1px solid var(--border); padding: 0.2em 0.4em; border-radius: 4px; font-size: 0.85em; color: var(--text-main); }
+    pre code { background-color: transparent; border: none; padding: 0; color: inherit; font-size: 1em; }
 
     footer { border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 60px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
   </style>
@@ -100,8 +95,8 @@
       </a>
       <div class="nav-links">
         <a href="index.html">Catalogue</a>
-        <a href="cours-html.html">HTML/CSS</a>
-        <a href="cours-js.html" style="color: var(--text-main); font-weight: 600;">JavaScript</a>
+        <a href="cours-html.html">Développement Web</a>
+        <a href="#" style="color: var(--text-main); font-weight: 600;">UI/UX</a>
       </div>
     </div>
   </nav>
@@ -111,99 +106,57 @@
       <h4>Sommaire</h4>
       <nav>
         <a href="#introduction">Introduction</a>
-        <a href="#variables">Variables (ES6)</a>
-        <a href="#fonctions">Fonctions</a>
-        <a href="#dom">Interaction DOM</a>
-        <a href="#exercices">Entraînement</a>
-      </nav>
-      
-      <h4 style="margin-top: 40px;">Raccourcis</h4>
-      <nav>
-        <a href="#"><code>const</code> / <code>let</code></a>
-        <a href="#"><code>() =&gt; {}</code></a>
-        <a href="#"><code>querySelector</code></a>
+        <a href="#typographie">Typographie</a>
+        <a href="#espaces">Loi de proximité</a>
+        <a href="#couleurs">Couleurs & Contraste</a>
       </nav>
     </aside>
 
     <main class="content">
       <header id="introduction">
-        <h1>JavaScript Moderne (ES6+)</h1>
-        <p class="lead">Donnez vie à vos interfaces. JavaScript est le langage de programmation incontournable du navigateur, permettant de gérer l'interactivité, de contacter des serveurs et d'animer vos pages.</p>
+        <h1>Fondations UI/UX</h1>
+        <p class="lead">Le développement vous permet de construire l'engin, le design dicte comment les utilisateurs vont interagir avec la carrosserie. Apprenez le minimalisme utilitaire.</p>
       </header>
       
-      <section id="variables">
-        <h2>Variables et Constantes</h2>
-        <p>En JavaScript moderne (ES6+), l'utilisation du mot-clé <code>var</code> est fortement déconseillée afin d'éviter les effets de bord indésirables.</p>
+      <section id="typographie">
+        <h2>Hiérarchie par la typographie</h2>
+        <p>Le secret d'un design professionnel ne réside pas dans de belles images, mais dans un texte incroyablement bien mis en valeur.</p>
         
         <div class="grid-2">
           <div class="card">
-            <h3>const</h3>
-            <p>Déclare une variable dont la référence ne changera jamais. C'est l'option recommandée par défaut 95% du temps.</p>
+            <h3>Deux polices maximum</h3>
+            <p>Utilisez une police sans-serif sobre (comme Inter ou Roboto) pour le corps de votre site, et réservez une deuxième police uniquement pour le code (monospace).</p>
           </div>
           <div class="card">
-            <h3>let</h3>
-            <p>Déclare une variable qui sera modifiée ou réaffectée plus tard dans l'exécution de votre script (ex: compteurs de boucle).</p>
+            <h3>Gras et contrastes</h3>
+            <p>Le titre doit toujours être plus grand, mais surtout plus sombre ou plus gras que le texte explicatif juste en dessous.</p>
           </div>
         </div>
-
-<pre><span class="comment">// Bonne pratique (ES6+)</span>
-<span class="keyword">const</span> <span class="variable">prenom</span> = <span class="string">"Alice"</span>;
-<span class="keyword">let</span> <span class="variable">age</span> = <span class="string">25</span>;
-<span class="variable">age</span> = <span class="string">26</span>; <span class="comment">// Valide</span>
-<span class="comment">// prenom = "Bob"; // Jeterait une erreur bloquante</span></pre>
       </section>
 
-      <section id="fonctions">
-        <h2>Déclaration de fonctions</h2>
-        <p>Les fonctions encadrent votre logique. Avec l'arrivée des "fonctions fléchées" (arrow functions), le langage s'est considérablement épuré.</p>
-
-<pre><span class="comment">// Déclaration standard (historique)</span>
-<span class="keyword">function</span> <span class="function">saluer</span>(<span class="variable">nom</span>) {
-  <span class="keyword">return</span> <span class="string">"Bonjour "</span> + <span class="variable">nom</span>;
-}
-
-<span class="comment">// Déclaration moderne (Arrow function avec template littéral)</span>
-<span class="keyword">const</span> <span class="function">saluerModerne</span> = (<span class="variable">nom</span>) =&gt; {
-  <span class="keyword">return</span> <span class="string">`Bonjour ${nom}`</span>;
-};
-
-<span class="comment">// L'arrow function permet même des retours implicites :</span>
-<span class="keyword">const</span> <span class="function">multiplier</span> = (<span class="variable">a</span>, <span class="variable">b</span>) =&gt; <span class="variable">a</span> * <span class="variable">b</span>;</pre>
+      <section id="espaces">
+        <h2>Loi de l'air et de la proximité</h2>
+        <p>En design (Gestalt), des éléments proches les uns des autres sont perçus comme faisant partie du même groupe. N'ayez pas peur des grands espaces blancs (whitespace).</p>
+        <ul>
+          <li><strong>Marge intérieure (padding) :</strong> Laissez respirer vos blocs, un <code>padding</code> de 24px est une excellente moyenne.</li>
+          <li><strong>Groupement :</strong> Augmentez considérablement vos marges entre différentes sections. Les lecteurs doivent voir les coupes naturelles du document.</li>
+        </ul>
       </section>
 
-      <section id="dom">
-        <h2>Manipulation du DOM</h2>
-        <p>Le <strong>Document Object Model (DOM)</strong> est la représentation HTML chargée par le navigateur. JavaScript permet d'interagir avec et de la modifier en direct.</p>
+      <section id="couleurs">
+        <h2>Le minimalisme des couleurs</h2>
+        <p>Oubliez la couleur pour commencer. Un excellent design fonctionne d'abord en niveaux de gris purs.</p>
         
         <div class="grid-2">
           <div class="card">
-            <h3>Sélectionner</h3>
-            <p>Utilisez l'omniprésent <code>document.querySelector('.ma-classe')</code> pour récupérer le premier élément qui correspond à un sélecteur CSS précis.</p>
+            <h3>La règle du 60-30-10</h3>
+            <p>60% de votre interface doit agir en couleur de fond (bg), 30% en composants/surfaces. Moins de 10% doit comporter la fameuse "couleur d'accent" (bleu, vert ou violet) pour inciter au clic.</p>
           </div>
           <div class="card">
-            <h3>Agir</h3>
-            <p>Manipulez ses classes, son contenu texte, ou ajoutez des écouteurs d'événements pour réagir aux clics avec <code>addEventListener</code>.</p>
+            <h3>Bordures discrètes</h3>
+            <p>Ne faites jamais des bordures de couleur pure. Optez toujours pour le gris clair. Un <code>1px solid #e5e7eb</code> garantit l'effet Stripe/Vercel.</p>
           </div>
         </div>
-
-<pre><span class="comment">// Cible le bouton dans mon HTML</span>
-<span class="keyword">const</span> <span class="variable">bouton</span> = <span class="variable">document</span>.<span class="function">querySelector</span>(<span class="string">'.action-btn'</span>);
-
-<span class="comment">// Je déclenche un code quand l'utilisateur clique dessus</span>
-<span class="variable">bouton</span>.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
-  <span class="variable">document</span>.<span class="variable">body</span>.<span class="variable">classList</span>.<span class="function">toggle</span>(<span class="string">'dark-mode'</span>);
-});</pre>
-      </section>
-
-      <section id="exercices">
-        <h2>Entraînement</h2>
-        <p>Mettez en pratique vos connaissances JavaScript :</p>
-        <ol>
-          <li>Dans un fichier HTML, créez un bouton "Afficher Alerte".</li>
-          <li>Dans une balise <code>&lt;script&gt;</code> en fin de fichier, récupérez ce bouton via un sélecteur.</li>
-          <li>Attachez-y un événement "click".</li>
-          <li>Faites en sorte qu'une modale s'affiche avec <code>alert("Cliqué !")</code> au moment de l'action.</li>
-        </ol>
       </section>
 
     </main>

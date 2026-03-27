@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RevLearn - Plateforme</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
   <style>
     :root {
       --bg: #ffffff;
@@ -303,7 +312,7 @@
       </div>
       <div class="nav-links">
         <a href="#catalogue">Catalogue</a>
-        <a href="#nouveautes">Nouveautés</a>
+        <a href="nouveautes.html">Nouveautés</a>
       </div>
     </div>
   </nav>
@@ -312,11 +321,11 @@
     <aside class="sidebar">
       <h4>Domaines</h4>
       <nav>
-        <a href="#" class="active">Tous les cours</a>
-        <a href="#">Outils & DevOps</a>
-        <a href="#">Développement Web</a>
-        <a href="#">Design UI/UX</a>
-        <a href="#">Algorithmique</a>
+        <a href="#catalogue" class="active">Tous les cours</a>
+        <a href="#outils">Outils & DevOps</a>
+        <a href="#web">Développement Web</a>
+        <a href="#design">Design UI/UX</a>
+        <a href="#algo">Algorithmique</a>
       </nav>
       
       <h4 style="margin-top: 40px;">Niveaux</h4>
@@ -328,12 +337,12 @@
     </aside>
 
     <main class="content">
-      <header>
+      <header id="catalogue">
         <h1>Catalogue des cours</h1>
         <p class="lead">Accédez à des documents techniques et tutoriels exclusifs, rédigés selon les plus hauts standards de l'industrie. Le savoir rendu accessible et professionnel.</p>
       </header>
       
-      <section id="catalogue">
+      <section id="outils">
         <h2>Outils & DevOps</h2>
         
         <div class="course-grid">
@@ -365,7 +374,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="web">
         <h2>Développement Web</h2>
         
         <div class="course-grid">
@@ -390,6 +399,40 @@
             <div class="course-meta">
               <span>8 heures</span>
               <span class="tag">Intermédiaire</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="design">
+        <h2>Design UI/UX</h2>
+        <div class="course-grid">
+          <a href="cours-ui.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge">Ui</div>
+              <h3>Fondations UI/UX</h3>
+            </div>
+            <p>Apprenez les lois de la hiérarchie visuelle, de la typographie et de l'accessibilité pour sublimer vos interfaces.</p>
+            <div class="course-meta">
+              <span>4 heures</span>
+              <span class="tag">Débutant</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="algo">
+        <h2>Algorithmique</h2>
+        <div class="course-grid">
+          <a href="cours-algo.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge">Al</div>
+              <h3>Logique et Algorithmique</h3>
+            </div>
+            <p>Découvrez l'art de résoudre des problèmes par le code : variables, boucles, fonctions et complexité.</p>
+            <div class="course-meta">
+              <span>5 heures</span>
+              <span class="tag">Débutant</span>
             </div>
           </a>
         </div>

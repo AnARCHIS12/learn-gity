@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cours Fondations UI/UX</title>
+  <title>Cours Accessibilité WCAG</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -54,15 +54,15 @@
       <h4 style="margin-top: 40px;">Repères</h4>
       <div class="meta-pills">
         <span class="pill">Design UI/UX</span>
-        <span class="pill">Débutant</span>
-        <span class="pill">4 heures</span>
+        <span class="pill">Intermédiaire</span>
+        <span class="pill">3 heures</span>
       </div>
     </aside>
 
     <main class="content">
       <header id="introduction">
-        <h1><i class="fa-solid fa-pen-nib" style="margin-right: 12px; color: var(--text-muted);"></i>Fondations UI/UX</h1>
-        <p class="lead">Hiérarchie visuelle, typographie et accessibilité pour sublimer vos interfaces. Le niveau attendu n’est pas purement esthétique. Il faut être capable d’argumenter des choix visuels, de construire un système cohérent et de vérifier que l’interface aide réellement l’usage.</p>
+        <h1><i class="fa-solid fa-universal-access" style="margin-right: 12px; color: var(--text-muted);"></i>Accessibilité WCAG</h1>
+        <p class="lead">ARIA, contrastes, navigation clavier et tests d&#x27;accessibilité WCAG 2.1. Le niveau attendu n’est pas purement esthétique. Il faut être capable d’argumenter des choix visuels, de construire un système cohérent et de vérifier que l’interface aide réellement l’usage.</p>
 
         <div class="stats-grid">
           <div class="stat">
@@ -71,69 +71,69 @@
           </div>
           <div class="stat">
             <span class="stat-label">Niveau</span>
-            <strong>Débutant</strong>
+            <strong>Intermédiaire</strong>
           </div>
           <div class="stat">
             <span class="stat-label">Temps</span>
-            <strong>4 heures</strong>
+            <strong>3 heures</strong>
           </div>
         </div>
 
         <div class="grid-2">
           <div class="card">
             <h3>Ce que vous allez maîtriser</h3>
-            <p>Comprendre le rôle exact de hiérarchie visuelle et de espacement dans un cas concret.</p>
+            <p>Comprendre le rôle exact de principes WCAG et de sémantique et ARIA dans un cas concret.</p>
           </div>
           <div class="card">
             <h3>Décisions techniques</h3>
-            <p>Savoir quand introduire états de composants et quand une solution plus simple reste préférable.</p>
+            <p>Savoir quand introduire navigation clavier et quand une solution plus simple reste préférable.</p>
           </div>
           <div class="card">
             <h3>Réflexes de qualité</h3>
-            <p>Repérer les erreurs récurrentes autour de accessibilité avant qu’elles ne se transforment en dette ou en bug.</p>
+            <p>Repérer les erreurs récurrentes autour de tests d’accessibilité avant qu’elles ne se transforment en dette ou en bug.</p>
           </div>
           <div class="card">
             <h3>Projet de validation</h3>
-            <p>Terminer par concevoir une interface simple, cohérente et défendable pour un produit web.</p>
+            <p>Terminer par auditer puis corriger une page produit pour la rendre réellement accessible.</p>
           </div>
         </div>
       </header>
 
       <section id="cadrage">
         <h2>1. Ce que couvre le cours</h2>
-        <p>Sur Fondations UI/UX, l’enjeu est de transformer des principes en décisions visibles. Les notions de hiérarchie visuelle, espacement, états de composants et accessibilité doivent devenir des choix que vous pouvez justifier en revue de design ou en échange avec une équipe produit et dev.</p>
-        <p>Le fil rouge du cours est simple: terminer par concevoir une interface simple, cohérente et défendable pour un produit web. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
+        <p>Sur Accessibilité WCAG, l’enjeu est de transformer des principes en décisions visibles. Les notions de principes WCAG, sémantique et ARIA, navigation clavier et tests d’accessibilité doivent devenir des choix que vous pouvez justifier en revue de design ou en échange avec une équipe produit et dev.</p>
+        <p>Le fil rouge du cours est simple: terminer par auditer puis corriger une page produit pour la rendre réellement accessible. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
         <pre>Prérequis conseillés:
 - observer des interfaces existantes avec un regard critique
 - être prêt à tester et comparer plusieurs variantes
 - accepter que la qualité visuelle passe par des règles et des contraintes
 
 À la fin du cours, vous devrez être capable de:
-- expliquer hiérarchie visuelle, espacement, états de composants et accessibilité dans vos propres mots
-- prendre une décision défendable sur états de composants
-- vérifier le comportement ou la qualité autour de accessibilité
-- livrer concevoir une interface simple, cohérente et défendable pour un produit web</pre>
+- expliquer principes WCAG, sémantique et ARIA, navigation clavier et tests d’accessibilité dans vos propres mots
+- prendre une décision défendable sur navigation clavier
+- vérifier le comportement ou la qualité autour de tests d’accessibilité
+- livrer auditer puis corriger une page produit pour la rendre réellement accessible</pre>
       </section>
 
       <section id="concepts">
         <h2>2. Concepts clés</h2>
-        <p>Le cœur du sujet tient dans hiérarchie visuelle, espacement, états de composants et accessibilité. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
+        <p>Le cœur du sujet tient dans principes WCAG, sémantique et ARIA, navigation clavier et tests d’accessibilité. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
         <div class="grid-2">
           <div class="card">
-            <h3>hiérarchie visuelle</h3>
-            <p>Comment hiérarchie visuelle influence la compréhension immédiate de l’interface et la qualité du parcours utilisateur.</p>
+            <h3>principes WCAG</h3>
+            <p>Comment principes WCAG influence la compréhension immédiate de l’interface et la qualité du parcours utilisateur.</p>
           </div>
           <div class="card">
-            <h3>espacement</h3>
-            <p>Les décisions concrètes à prendre autour de espacement: rythme, cohérence, lisibilité, adaptation au contexte.</p>
+            <h3>sémantique et ARIA</h3>
+            <p>Les décisions concrètes à prendre autour de sémantique et ARIA: rythme, cohérence, lisibilité, adaptation au contexte.</p>
           </div>
           <div class="card">
-            <h3>états de composants</h3>
-            <p>Les compromis de états de composants entre expressivité visuelle, contraintes techniques et accessibilité.</p>
+            <h3>navigation clavier</h3>
+            <p>Les compromis de navigation clavier entre expressivité visuelle, contraintes techniques et accessibilité.</p>
           </div>
           <div class="card">
-            <h3>accessibilité</h3>
-            <p>La façon de vérifier que accessibilité améliore vraiment l’expérience au lieu d’ajouter une couche décorative.</p>
+            <h3>tests d’accessibilité</h3>
+            <p>La façon de vérifier que tests d’accessibilité améliore vraiment l’expérience au lieu d’ajouter une couche décorative.</p>
           </div>
         </div>
         <p>Si vous êtes capable de relier ces quatre briques à un cas concret, d’expliquer leurs compromis et d’identifier ce qu’elles changent réellement dans le résultat final, alors la base du cours est solide.</p>
@@ -144,26 +144,26 @@
         <p>Le plus rentable est d’avancer par incréments: un cas minimal, une structure lisible, puis des raffinements successifs appuyés par des vérifications concrètes.</p>
         <ol>
           <li>Clarifier d’abord l’objectif de l’écran, le public et le contenu réel à faire passer.</li>
-          <li>Construire une première proposition autour de hiérarchie visuelle et espacement avant toute finition décorative.</li>
-          <li>Introduire états de composants pour rendre la composition cohérente sur plusieurs écrans ou états.</li>
-          <li>Utiliser accessibilité comme critère de vérification et non comme simple conformité de façade.</li>
-          <li>Conclure avec concevoir une interface simple, cohérente et défendable pour un produit web et une justification lisible de vos choix.</li>
+          <li>Construire une première proposition autour de principes WCAG et sémantique et ARIA avant toute finition décorative.</li>
+          <li>Introduire navigation clavier pour rendre la composition cohérente sur plusieurs écrans ou états.</li>
+          <li>Utiliser tests d’accessibilité comme critère de vérification et non comme simple conformité de façade.</li>
+          <li>Conclure avec auditer puis corriger une page produit pour la rendre réellement accessible et une justification lisible de vos choix.</li>
         </ol>
       </section>
 
       <section id="cas-pratique">
         <h2>4. Cas pratique</h2>
         <p>Un bon cours de design doit produire des décisions visibles. Le cas pratique ci-dessous vous oblige donc à passer d’intentions vagues à une revue concrète d’écran, de parcours et de système visuel.</p>
-        <p>Ce type d’exercice permet de tester si hiérarchie visuelle, espacement, états de composants et accessibilité sont réellement compris comme outils de conception et non comme simple vocabulaire.</p>
+        <p>Ce type d’exercice permet de tester si principes WCAG, sémantique et ARIA, navigation clavier et tests d’accessibilité sont réellement compris comme outils de conception et non comme simple vocabulaire.</p>
         <pre>Grille de revue
 
-Sujet: concevoir une interface simple, cohérente et défendable pour un produit web
+Sujet: auditer puis corriger une page produit pour la rendre réellement accessible
 1. objectif de l’écran et information prioritaire
-2. décisions visibles autour de hiérarchie visuelle et espacement
-3. déclinaison de états de composants sur desktop et mobile
-4. vérification de accessibilité sur un cas réel
+2. décisions visibles autour de principes WCAG et sémantique et ARIA
+3. déclinaison de navigation clavier sur desktop et mobile
+4. vérification de tests d’accessibilité sur un cas réel
 5. ajustements après revue ou test rapide</pre>
-        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de accessibilité dans le contexte choisi.</p>
+        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de tests d’accessibilité dans le contexte choisi.</p>
       </section>
 
       <section id="vigilance">
@@ -191,35 +191,35 @@ Sujet: concevoir une interface simple, cohérente et défendable pour un produit
 
       <section id="projet">
         <h2>6. Projet guidé</h2>
-        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de concevoir une interface simple, cohérente et défendable pour un produit web.</p>
+        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de auditer puis corriger une page produit pour la rendre réellement accessible.</p>
         <ol>
           <li>Fixez un périmètre volontairement réduit afin de finir proprement et de pouvoir expliquer chaque décision.</li>
-          <li>Introduisez hiérarchie visuelle et espacement sur un cas simple avant d’ajouter davantage de surface.</li>
-          <li>Ajoutez ensuite états de composants au moment où son intérêt devient visible dans le flux ou la structure.</li>
-          <li>Vérifiez explicitement accessibilité avec un test, une mesure, une revue, un benchmark ou une observation.</li>
-          <li>Concluez par concevoir une interface simple, cohérente et défendable pour un produit web avec une courte note sur les arbitrages, les limites et la suite logique.</li>
+          <li>Introduisez principes WCAG et sémantique et ARIA sur un cas simple avant d’ajouter davantage de surface.</li>
+          <li>Ajoutez ensuite navigation clavier au moment où son intérêt devient visible dans le flux ou la structure.</li>
+          <li>Vérifiez explicitement tests d’accessibilité avec un test, une mesure, une revue, un benchmark ou une observation.</li>
+          <li>Concluez par auditer puis corriger une page produit pour la rendre réellement accessible avec une courte note sur les arbitrages, les limites et la suite logique.</li>
         </ol>
         <pre>Définition de terminé
 
-Sujet: concevoir une interface simple, cohérente et défendable pour un produit web
-Objectif pédagogique: consolider Fondations UI/UX
+Sujet: auditer puis corriger une page produit pour la rendre réellement accessible
+Objectif pédagogique: consolider Accessibilité WCAG
 Le travail doit montrer:
-- une compréhension exploitable de hiérarchie visuelle
-- une mise en œuvre lisible autour de espacement
-- une décision argumentée concernant états de composants
-- une vérification explicite sur accessibilité</pre>
+- une compréhension exploitable de principes WCAG
+- une mise en œuvre lisible autour de sémantique et ARIA
+- une décision argumentée concernant navigation clavier
+- une vérification explicite sur tests d’accessibilité</pre>
       </section>
 
       <section id="exercices">
         <h2>7. Exercices</h2>
         <p>Ne répondez pas par définition. Le bon niveau est celui d’une personne capable d’argumenter, de comparer et de dire ce qu’elle vérifierait en pratique.</p>
         <ol>
-          <li>Expliquez comment hiérarchie visuelle influence la compréhension d’un écran dans les premières secondes.</li>
-          <li>Donnez un contre-exemple où l'usage de espacement nuit à la lisibilité.</li>
-          <li>Proposez une règle simple pour décliner états de composants sur plusieurs écrans sans incohérence.</li>
-          <li>Décrivez une manière concrète de vérifier accessibilité sans vous reposer uniquement sur votre propre goût.</li>
+          <li>Expliquez comment principes WCAG influence la compréhension d’un écran dans les premières secondes.</li>
+          <li>Donnez un contre-exemple où l'usage de sémantique et ARIA nuit à la lisibilité.</li>
+          <li>Proposez une règle simple pour décliner navigation clavier sur plusieurs écrans sans incohérence.</li>
+          <li>Décrivez une manière concrète de vérifier tests d’accessibilité sans vous reposer uniquement sur votre propre goût.</li>
           <li>Expliquez la différence entre décision locale de maquettage et principe de système visuel.</li>
-          <li>Présentez les éléments que vous montreriez pour défendre concevoir une interface simple, cohérente et défendable pour un produit web lors d’une revue design-dev.</li>
+          <li>Présentez les éléments que vous montreriez pour défendre auditer puis corriger une page produit pour la rendre réellement accessible lors d’une revue design-dev.</li>
         </ol>
       </section>
     </main>

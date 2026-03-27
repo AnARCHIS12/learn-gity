@@ -35,15 +35,8 @@
       --container-width: 1100px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -51,253 +44,119 @@
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    /* Navbar */
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background-color: rgba(255, 255, 255, 0.9);
+      position: sticky; top: 0; z-index: 50;
+      background-color: rgba(255,255,255,0.9);
       backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
-      height: 64px;
-      display: flex;
-      align-items: center;
+      height: 64px; display: flex; align-items: center;
     }
 
     .navbar-container {
-      width: 100%;
-      max-width: var(--container-width);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      width: 100%; max-width: var(--container-width);
+      margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
     .logo {
-      font-size: 1.1rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text-main);
-      letter-spacing: -0.02em;
+      font-size: 1.1rem; font-weight: 700;
+      display: flex; align-items: center; gap: 10px;
+      color: var(--text-main); letter-spacing: -0.02em;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 32px;
-    }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-main); }
 
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: color 0.15s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-main);
-    }
-
-    /* Main Layout */
     .container {
-      max-width: var(--container-width);
-      margin: 0 auto;
+      max-width: var(--container-width); margin: 0 auto;
       padding: 40px 24px;
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 60px;
+      display: grid; grid-template-columns: 240px 1fr; gap: 60px;
     }
 
     @media (max-width: 850px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        display: none;
-      }
+      .container { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
     }
 
-    /* Sidebar */
-    .sidebar {
-      position: sticky;
-      top: 104px;
-      height: fit-content;
-    }
-
+    .sidebar { position: sticky; top: 104px; height: fit-content; }
     .sidebar h4 {
-      font-size: 0.85rem;
-      color: var(--text-main);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 16px;
-      font-weight: 600;
+      font-size: 0.85rem; color: var(--text-main);
+      text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 16px; font-weight: 600;
     }
-
-    .sidebar nav {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
+    .sidebar nav { display: flex; flex-direction: column; gap: 8px; }
     .sidebar a {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      padding: 6px 10px;
-      border-radius: var(--radius-sm);
-      margin-left: -10px;
-      transition: all 0.15s ease;
+      font-size: 0.9rem; color: var(--text-muted);
+      padding: 6px 10px; border-radius: var(--radius-sm);
+      margin-left: -10px; transition: all 0.15s;
     }
-
     .sidebar a:hover, .sidebar a.active {
-      background-color: var(--bg-surface);
-      color: var(--text-main);
+      background-color: var(--bg-surface); color: var(--text-main);
     }
+    .sidebar a.active { font-weight: 500; }
 
-    .sidebar a.active {
-      font-weight: 500;
-    }
-
-    /* Content Typography */
     .content h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 24px;
-      color: var(--text-main);
+      font-size: 2.5rem; font-weight: 700;
+      letter-spacing: -0.03em; line-height: 1.2;
+      margin-bottom: 24px; color: var(--text-main);
     }
-
-    .lead {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 48px;
-      max-width: 700px;
-    }
-
-    section {
-      margin-bottom: 64px;
-    }
+    .lead { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 48px; max-width: 700px; }
+    section { margin-bottom: 64px; }
 
     .content h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-      color: var(--text-main);
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
+      font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em;
+      margin-bottom: 24px; color: var(--text-main);
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
     }
 
-    .content p {
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      max-width: 750px;
-    }
-
-    /* Course Cards */
     .course-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-      margin: 32px 0;
+      gap: 24px; margin: 32px 0;
     }
 
     .course-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      background-color: var(--bg);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 24px; background-color: var(--bg);
       transition: border-color 0.2s;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+      display: flex; flex-direction: column; height: 100%;
     }
+    .course-card:hover { border-color: #d1d5db; }
 
-    .course-card:hover {
-      border-color: #d1d5db;
-    }
-
-    .course-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
+    .course-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
 
     .course-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: var(--radius-md);
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      color: var(--text-main);
-      font-size: 1.1rem;
+      width: 42px; height: 42px; border-radius: var(--radius-md);
+      background-color: var(--bg-surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--text-main);
     }
 
-    .course-card h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-main);
-      line-height: 1.3;
-    }
-
-    .course-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-      flex-grow: 1;
-    }
+    .course-card h3 { font-size: 1.05rem; font-weight: 600; color: var(--text-main); line-height: 1.3; }
+    .course-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; flex-grow: 1; }
 
     .course-meta {
-      display: flex;
-      gap: 12px;
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-family: 'JetBrains Mono', monospace;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .course-meta span {
-      display: flex;
-      gap: 8px;
-      align-items: center;
+      display: flex; gap: 12px; font-size: 0.82rem;
+      color: var(--text-light); font-family: 'JetBrains Mono', monospace;
+      padding-top: 16px; border-top: 1px solid var(--border);
+      align-items: center; justify-content: space-between;
     }
 
     .tag {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border);
-      padding: 2px 8px;
-      border-radius: 4px;
-      color: var(--text-main);
-      font-size: 0.75rem;
+      background-color: var(--bg-surface); border: 1px solid var(--border);
+      padding: 2px 8px; border-radius: 4px;
+      color: var(--text-main); font-size: 0.75rem;
     }
 
-    /* Footer */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 24px;
-      margin-top: 60px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      border-top: 1px solid var(--border); padding: 40px 24px;
+      margin-top: 60px; text-align: center;
+      color: var(--text-muted); font-size: 0.9rem;
     }
   </style>
 </head>
@@ -323,12 +182,17 @@
       <h4>Domaines</h4>
       <nav>
         <a href="#catalogue" class="active">Tous les cours</a>
-        <a href="#outils">Outils & DevOps</a>
+        <a href="#outils">Outils &amp; DevOps</a>
         <a href="#web">Développement Web</a>
         <a href="#design">Design UI/UX</a>
         <a href="#algo">Algorithmique</a>
+        <a href="#securite">Sécurité</a>
+        <a href="#data">Data &amp; IA</a>
+        <a href="#mobile">Mobile</a>
+        <a href="#reseau">Réseaux &amp; Systèmes</a>
+        <a href="#langages">Langages</a>
       </nav>
-      
+
       <h4 style="margin-top: 40px;">Niveaux</h4>
       <nav>
         <a href="#">Débutant</a>
@@ -340,55 +204,110 @@
     <main class="content">
       <header id="catalogue">
         <h1>Catalogue des cours</h1>
-        <p class="lead">Accédez à des documents techniques et tutoriels exclusifs, rédigés selon les plus hauts standards de l'industrie. Le savoir rendu accessible et professionnel.</p>
+        <p class="lead">Accédez à des cours et tutoriels techniques pensés pour apprendre clairement, progresser à votre rythme et partager des savoirs utiles.</p>
       </header>
-      
+
+      <!-- ═══════════════ OUTILS & DEVOPS ═══════════════ -->
       <section id="outils">
-        <h2>Outils & DevOps</h2>
-        
+        <h2>Outils &amp; DevOps</h2>
         <div class="course-grid">
-          <!-- Course Git Card -->
+
           <a href="cours-git.html" class="course-card">
             <div class="course-header">
               <div class="course-badge"><i class="fa-brands fa-git-alt"></i></div>
               <h3>Maîtrise de Git</h3>
             </div>
-            <p>Comprenez la gestion de versions de manière méthodique. Historique de commit, branching, et fusions sécurisées.</p>
-            <div class="course-meta">
-              <span>2 heures</span>
-              <span class="tag">Débutant</span>
-            </div>
+            <p>Gestion de versions méthodique. Historique de commit, branching et fusions sécurisées.</p>
+            <div class="course-meta"><span>2 heures</span><span class="tag">Débutant</span></div>
           </a>
 
-          <!-- Course Bash Card -->
           <a href="cours-bash.html" class="course-card">
             <div class="course-header">
               <div class="course-badge"><i class="fa-solid fa-terminal"></i></div>
-              <h3>Terminal & Bash</h3>
+              <h3>Terminal &amp; Bash</h3>
             </div>
-            <p>Maîtrisez les commandes Unix essentielles et les scripts shell pour automatiser et naviguer comme un administrateur.</p>
-            <div class="course-meta">
-              <span>3 heures</span>
-              <span class="tag">Intermédiaire</span>
-            </div>
+            <p>Commandes Unix essentielles et scripts shell pour automatiser comme un administrateur.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
           </a>
+
+          <a href="cours-docker-and-conteneurs.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-docker"></i></div>
+              <h3>Docker &amp; Conteneurs</h3>
+            </div>
+            <p>Créez et gérez des applications conteneurisées. Images, volumes, réseaux et Compose.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-ci-cd-avec-gitlab.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-infinity"></i></div>
+              <h3>CI/CD avec GitLab</h3>
+            </div>
+            <p>Automatisez vos pipelines build, test et déploiement. Runners, stages et artifacts.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-kubernetes-fondamentaux.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-dharmachakra"></i></div>
+              <h3>Kubernetes Fondamentaux</h3>
+            </div>
+            <p>Orchestration de conteneurs. Pods, services, deployments et ingress controllers.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-git-avance.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-code-branch"></i></div>
+              <h3>Git Avancé</h3>
+            </div>
+            <p>Rebase interactif, cherry-pick, stash, hooks et workflows professionnels en équipe.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-ansible-and-iac.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-cubes"></i></div>
+              <h3>Ansible &amp; IaC</h3>
+            </div>
+            <p>Infrastructure as Code avec Ansible. Playbooks, inventaires, rôles et automatisation.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-monitoring-avec-grafana.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>Monitoring avec Grafana</h3>
+            </div>
+            <p>Visualisation de métriques avec Grafana et Prometheus. Alertes et dashboards prod.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-terraform-and-cloud-iac.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+              <h3>Terraform &amp; Cloud IaC</h3>
+            </div>
+            <p>Provisionner et gérer l'infrastructure cloud déclarativement avec Terraform HCL.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
         </div>
       </section>
 
+      <!-- ═══════════════ DÉVELOPPEMENT WEB ═══════════════ -->
       <section id="web">
         <h2>Développement Web</h2>
-        
         <div class="course-grid">
+
           <a href="cours-html.html" class="course-card">
             <div class="course-header">
               <div class="course-badge"><i class="fa-brands fa-html5"></i></div>
               <h3>Fondations HTML/CSS</h3>
             </div>
-            <p>Structuration sémantique du web et mise en page moderne via Flexbox et Grid layouts.</p>
-            <div class="course-meta">
-              <span>5 heures</span>
-              <span class="tag">Débutant</span>
-            </div>
+            <p>Structuration sémantique du web et mise en page moderne via Flexbox et Grid.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Débutant</span></div>
           </a>
 
           <a href="cours-js.html" class="course-card">
@@ -396,46 +315,588 @@
               <div class="course-badge"><i class="fa-brands fa-js"></i></div>
               <h3>JavaScript Moderne</h3>
             </div>
-            <p>Familiarisez-vous avec les concepts ES6+, la manipulation du DOM de l'asynchrone.</p>
-            <div class="course-meta">
-              <span>8 heures</span>
-              <span class="tag">Intermédiaire</span>
-            </div>
+            <p>Concepts ES6+, manipulation du DOM et programmation asynchrone.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Intermédiaire</span></div>
           </a>
+
+          <a href="cours-api.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-plug"></i></div>
+              <h3>APIs REST &amp; HTTP</h3>
+            </div>
+            <p>Conception et consommation d'APIs RESTful. Méthodes HTTP, statuts et authentification.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-react-js-fondamentaux.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-react"></i></div>
+              <h3>React.js Fondamentaux</h3>
+            </div>
+            <p>Composants, props, state, hooks (useState, useEffect) et architecture SPA moderne.</p>
+            <div class="course-meta"><span>10 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-node-js-and-express.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-node-js"></i></div>
+              <h3>Node.js &amp; Express</h3>
+            </div>
+            <p>Serveurs back-end, middleware, routage REST et connexion à des bases de données.</p>
+            <div class="course-meta"><span>7 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-css-avance-and-animations.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-layer-group"></i></div>
+              <h3>CSS Avancé &amp; Animations</h3>
+            </div>
+            <p>Variables CSS, animations keyframes, glassmorphism et design systems modernes.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-vue-js-3.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-vuejs"></i></div>
+              <h3>Vue.js 3</h3>
+            </div>
+            <p>Composition API, réactivité, Vue Router et gestion d'état avec Pinia.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-sql-and-postgresql.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-database"></i></div>
+              <h3>SQL &amp; PostgreSQL</h3>
+            </div>
+            <p>Requêtes SELECT, JOIN, GROUP BY, transactions, index et optimisation.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Débutant</span></div>
+          </a>
+
+          <a href="cours-typescript-essentiel.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-bolt"></i></div>
+              <h3>TypeScript Essentiel</h3>
+            </div>
+            <p>Types, interfaces, génériques et intégration avec React ou Node pour du code robuste.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-graphql-and-apollo.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-server"></i></div>
+              <h3>GraphQL &amp; Apollo</h3>
+            </div>
+            <p>Schémas, queries, mutations, subscriptions et resolver patterns.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-pwa-and-web-performance.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-mobile-alt"></i></div>
+              <h3>PWA &amp; Web Performance</h3>
+            </div>
+            <p>Service workers, Web Vitals, lazy loading et optimisation du rendu navigateur.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-php-moderne.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-php"></i></div>
+              <h3>PHP Moderne</h3>
+            </div>
+            <p>PHP 8.x, OOP, namespaces, Composer et bonnes pratiques de développement.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-next-js-full-stack.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-n"></i></div>
+              <h3>Next.js Full-Stack</h3>
+            </div>
+            <p>SSR, SSG, App Router, Server Actions et déploiement sur Vercel avec Next.js 14.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-mongodb-and-nosql.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-leaf"></i></div>
+              <h3>MongoDB &amp; NoSQL</h3>
+            </div>
+            <p>Modélisation de données NoSQL, requêtes MongoDB, agrégations et index.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
         </div>
       </section>
 
+      <!-- ═══════════════ DESIGN ═══════════════ -->
       <section id="design">
         <h2>Design UI/UX</h2>
         <div class="course-grid">
+
           <a href="cours-ui.html" class="course-card">
             <div class="course-header">
               <div class="course-badge"><i class="fa-solid fa-pen-nib"></i></div>
               <h3>Fondations UI/UX</h3>
             </div>
-            <p>Apprenez les lois de la hiérarchie visuelle, de la typographie et de l'accessibilité pour sublimer vos interfaces.</p>
-            <div class="course-meta">
-              <span>4 heures</span>
-              <span class="tag">Débutant</span>
-            </div>
+            <p>Hiérarchie visuelle, typographie et accessibilité pour sublimer vos interfaces.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Débutant</span></div>
           </a>
+
+          <a href="cours-theorie-des-couleurs.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-palette"></i></div>
+              <h3>Théorie des Couleurs</h3>
+            </div>
+            <p>Psychologie des couleurs, palettes harmonieuses et contrastes accessibles.</p>
+            <div class="course-meta"><span>2 heures</span><span class="tag">Débutant</span></div>
+          </a>
+
+          <a href="cours-systemes-de-grilles.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-ruler-combined"></i></div>
+              <h3>Systèmes de Grilles</h3>
+            </div>
+            <p>Grilles de mise en page : columns, margins, gutters et responsive breakpoints.</p>
+            <div class="course-meta"><span>2 heures</span><span class="tag">Débutant</span></div>
+          </a>
+
+          <a href="cours-typographie-web.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-font"></i></div>
+              <h3>Typographie Web</h3>
+            </div>
+            <p>Choisir et combiner des polices, tailles, espacement et hiérarchie typographique.</p>
+            <div class="course-meta"><span>2 heures</span><span class="tag">Débutant</span></div>
+          </a>
+
+          <a href="cours-figma-pour-developpeurs.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-vector-square"></i></div>
+              <h3>Figma pour Développeurs</h3>
+            </div>
+            <p>Inspecter des maquettes, extraire tokens de design et handoff designer/dev.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-accessibilite-wcag.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-universal-access"></i></div>
+              <h3>Accessibilité WCAG</h3>
+            </div>
+            <p>ARIA, contrastes, navigation clavier et tests d'accessibilité WCAG 2.1.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-prototypage-rapide.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-compass-drafting"></i></div>
+              <h3>Prototypage Rapide</h3>
+            </div>
+            <p>Wireframes, user flows, tests utilisateurs et itération rapide sur des prototypes.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
         </div>
       </section>
 
+      <!-- ═══════════════ ALGORITHMIQUE ═══════════════ -->
       <section id="algo">
         <h2>Algorithmique</h2>
         <div class="course-grid">
+
           <a href="cours-algo.html" class="course-card">
             <div class="course-header">
               <div class="course-badge"><i class="fa-solid fa-diagram-project"></i></div>
               <h3>Logique et Algorithmique</h3>
             </div>
-            <p>Découvrez l'art de résoudre des problèmes par le code : variables, boucles, fonctions et complexité.</p>
-            <div class="course-meta">
-              <span>5 heures</span>
-              <span class="tag">Débutant</span>
-            </div>
+            <p>Variables, boucles, fonctions et premiers pas vers la pensée algorithmique.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Débutant</span></div>
           </a>
+
+          <a href="cours-structures-de-donnees.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-sort"></i></div>
+              <h3>Structures de Données</h3>
+            </div>
+            <p>Tableaux, listes chaînées, piles, files, arbres et tables de hachage.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-recursivite-and-backtracking.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-brain"></i></div>
+              <h3>Récursivité &amp; Backtracking</h3>
+            </div>
+            <p>Fonctions récursives, cas de base et résolution de problèmes par backtracking.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-graphes-and-bfs-dfs.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-sitemap"></i></div>
+              <h3>Graphes &amp; BFS/DFS</h3>
+            </div>
+            <p>Parcours en largeur et profondeur, plus court chemin et algorithme de Dijkstra.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-complexite-o-n.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-clock"></i></div>
+              <h3>Complexité O(n)</h3>
+            </div>
+            <p>Analyser et optimiser le temps et l'espace mémoire. Big O notation et trade-offs.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-algorithmes-de-tri.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-shuffle"></i></div>
+              <h3>Algorithmes de Tri</h3>
+            </div>
+            <p>Bubble, insertion, merge sort, quicksort : analyse comparative et implémentation.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ SÉCURITÉ ═══════════════ -->
+      <section id="securite">
+        <h2>Sécurité Informatique</h2>
+        <div class="course-grid">
+
+          <a href="cours-owasp-top-10.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>OWASP Top 10</h3>
+            </div>
+            <p>XSS, injections SQL, CSRF : comprendre et contrer les 10 vulnérabilités critiques du web.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-cryptographie-appliquee.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-lock"></i></div>
+              <h3>Cryptographie Appliquée</h3>
+            </div>
+            <p>Symétrique, asymétrique, hachage, TLS/SSL, JWT et gestion des clés.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-ethical-hacking-and-pentest.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-user-secret"></i></div>
+              <h3>Ethical Hacking &amp; Pentest</h3>
+            </div>
+            <p>Méthodologie de test d'intrusion : reconnaissance, scanning et exploitation.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-authentification-and-oauth2.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-key"></i></div>
+              <h3>Authentification &amp; OAuth2</h3>
+            </div>
+            <p>Sessions, cookies, tokens JWT, OAuth 2.0 flows et OpenID Connect.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-pare-feu-and-ids-ips.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-fire-flame-curved"></i></div>
+              <h3>Pare-feu &amp; IDS/IPS</h3>
+            </div>
+            <p>Configuration de firewalls, détection d'intrusion et règles de filtrage réseau.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-securite-des-apis.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <h3>Sécurité des APIs</h3>
+            </div>
+            <p>Rate limiting, validation d'entrées, CORS, HTTPS et sécurisation des endpoints REST.</p>
+            <div class="course-meta"><span>3 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ DATA & IA ═══════════════ -->
+      <section id="data">
+        <h2>Data &amp; Intelligence Artificielle</h2>
+        <div class="course-grid">
+
+          <a href="cours-python-pour-la-data.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-python"></i></div>
+              <h3>Python pour la Data</h3>
+            </div>
+            <p>NumPy, Pandas, Matplotlib : manipuler, analyser et visualiser des données.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Débutant</span></div>
+          </a>
+
+          <a href="cours-machine-learning-fondamental.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-robot"></i></div>
+              <h3>Machine Learning Fondamental</h3>
+            </div>
+            <p>Régression, classification, clustering, validation croisée avec scikit-learn.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-reseaux-de-neurones.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-network-wired"></i></div>
+              <h3>Réseaux de Neurones</h3>
+            </div>
+            <p>Perceptrons, couches cachées, rétropropagation et implémentation PyTorch.</p>
+            <div class="course-meta"><span>10 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-analyse-exploratoire-eda.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <h3>Analyse Exploratoire (EDA)</h3>
+            </div>
+            <p>Nettoyage de données, détection d'anomalies, corrélations et visualisations.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-nlp-and-traitement-du-langage.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-comment-dots"></i></div>
+              <h3>NLP &amp; Traitement du Langage</h3>
+            </div>
+            <p>Tokenisation, embeddings, modèles de langue et HuggingFace Transformers.</p>
+            <div class="course-meta"><span>7 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-sql-pour-analystes.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-chart-bar"></i></div>
+              <h3>SQL pour Analystes</h3>
+            </div>
+            <p>Window functions, CTEs et optimisation avancée pour le reporting BI.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-mlops-and-pipelines-ml.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-cube"></i></div>
+              <h3>MLOps &amp; Pipelines ML</h3>
+            </div>
+            <p>Déploiement de modèles, monitoring, versioning et automatisation de pipelines.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-vision-par-ordinateur.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-eye"></i></div>
+              <h3>Vision par Ordinateur</h3>
+            </div>
+            <p>Convolutional Neural Networks, détection d'objets et traitement d'images avec OpenCV.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ MOBILE ═══════════════ -->
+      <section id="mobile">
+        <h2>Développement Mobile</h2>
+        <div class="course-grid">
+
+          <a href="cours-android-avec-kotlin.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-android"></i></div>
+              <h3>Android avec Kotlin</h3>
+            </div>
+            <p>Activités, fragments, RecyclerView, navigation et architecture MVVM Android.</p>
+            <div class="course-meta"><span>10 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-ios-avec-swift.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-apple"></i></div>
+              <h3>iOS avec Swift</h3>
+            </div>
+            <p>SwiftUI, UIKit, Combine et développement d'apps iOS modernes et performantes.</p>
+            <div class="course-meta"><span>10 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-react-native.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-react"></i></div>
+              <h3>React Native</h3>
+            </div>
+            <p>Applications cross-platform iOS/Android, navigation et APIs natives.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-flutter-and-dart.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-feather"></i></div>
+              <h3>Flutter &amp; Dart</h3>
+            </div>
+            <p>UI déclarative Flutter, widgets et state management avec Riverpod.</p>
+            <div class="course-meta"><span>9 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-optimisation-mobile.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-battery-full"></i></div>
+              <h3>Optimisation Mobile</h3>
+            </div>
+            <p>Performance, gestion mémoire, batterie et bonnes pratiques UX mobiles.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ RÉSEAUX & SYSTÈMES ═══════════════ -->
+      <section id="reseau">
+        <h2>Réseaux &amp; Systèmes</h2>
+        <div class="course-grid">
+
+          <a href="cours-fondamentaux-tcp-ip.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-network-wired"></i></div>
+              <h3>Fondamentaux TCP/IP</h3>
+            </div>
+            <p>Modèle OSI, adressage IP, sous-réseaux, protocoles TCP/UDP et Internet.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Débutant</span></div>
+          </a>
+
+          <a href="cours-cloud-aws-fondamentaux.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-aws"></i></div>
+              <h3>Cloud AWS Fondamentaux</h3>
+            </div>
+            <p>EC2, S3, RDS, Lambda et VPC : premiers pas sur AWS et architecture cloud.</p>
+            <div class="course-meta"><span>7 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-administration-linux.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-linux"></i></div>
+              <h3>Administration Linux</h3>
+            </div>
+            <p>Processus, permissions, systemd, cron jobs et maintenance de serveurs Linux.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-dns-and-http-en-profondeur.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-plug-circle-check"></i></div>
+              <h3>DNS &amp; HTTP en Profondeur</h3>
+            </div>
+            <p>Résolution DNS, enregistrements, HTTP/2, headers et debugging réseau.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-nginx-and-load-balancing.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-globe"></i></div>
+              <h3>Nginx &amp; Load Balancing</h3>
+            </div>
+            <p>Configuration Nginx, reverse proxy, SSL/TLS et répartition de charge.</p>
+            <div class="course-meta"><span>4 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-architecture-microservices.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-cloud"></i></div>
+              <h3>Architecture Microservices</h3>
+            </div>
+            <p>Découpage en services, communication inter-services, API Gateway et patterns.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════ LANGAGES ═══════════════ -->
+      <section id="langages">
+        <h2>Langages de Programmation</h2>
+        <div class="course-grid">
+
+          <a href="cours-python-fondamental.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-python"></i></div>
+              <h3>Python Fondamental</h3>
+            </div>
+            <p>Syntaxe, structures de données, fonctions, modules et bonnes pratiques.</p>
+            <div class="course-meta"><span>6 heures</span><span class="tag">Débutant</span></div>
+          </a>
+
+          <a href="cours-c-and-gestion-memoire.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-c"></i></div>
+              <h3>C &amp; Gestion Mémoire</h3>
+            </div>
+            <p>Pointeurs, allocation dynamique et gestion manuelle de la mémoire en C.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-java-oriente-objet.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-brands fa-java"></i></div>
+              <h3>Java Orienté Objet</h3>
+            </div>
+            <p>Classes, héritage, interfaces, collections, streams et design patterns Java.</p>
+            <div class="course-meta"><span>9 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-rust-pour-les-debutants.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-gear"></i></div>
+              <h3>Rust pour les Débutants</h3>
+            </div>
+            <p>Ownership, borrowing, lifetimes et sécurité mémoire. Pourquoi Rust change tout.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Avancé</span></div>
+          </a>
+
+          <a href="cours-go-golang.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-feather-pointed"></i></div>
+              <h3>Go (Golang)</h3>
+            </div>
+            <p>Concurrence avec goroutines et channels, interfaces Go et microservices.</p>
+            <div class="course-meta"><span>7 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-poo-and-design-patterns.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-code"></i></div>
+              <h3>POO &amp; Design Patterns</h3>
+            </div>
+            <p>SOLID, Singleton, Factory, Observer, Strategy et patterns indispensables.</p>
+            <div class="course-meta"><span>5 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-c-sharp-and-dotnet-core.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-hashtag"></i></div>
+              <h3>C# &amp; .NET Core</h3>
+            </div>
+            <p>Développement back-end avec ASP.NET Core, Entity Framework et architecture en couches.</p>
+            <div class="course-meta"><span>8 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
+          <a href="cours-ruby-on-rails.html" class="course-card">
+            <div class="course-header">
+              <div class="course-badge"><i class="fa-solid fa-gem"></i></div>
+              <h3>Ruby on Rails</h3>
+            </div>
+            <p>Convention over configuration, modèles ActiveRecord, routes RESTful et déploiement.</p>
+            <div class="course-meta"><span>7 heures</span><span class="tag">Intermédiaire</span></div>
+          </a>
+
         </div>
       </section>
 
@@ -443,7 +904,16 @@
   </div>
 
   <footer>
-    <p>Architecture et documentation rédigée dans un standard professionnel.</p>
+    <p>RevLearn, projet d'apprentissage ouvert et accessible.</p>
+    <p style="margin-top: 10px;">
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">Dépôt GitHub</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity/issues" target="_blank" rel="noopener noreferrer">Signaler un problème</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="politique-confidentialite.html">Politique de confidentialité</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="mentions-legales.html">Mentions légales</a>
+    </p>
   </footer>
 
 </body>

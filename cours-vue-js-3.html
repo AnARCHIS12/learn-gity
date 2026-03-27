@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cours JavaScript Moderne</title>
+  <title>Cours Vue.js 3</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -61,8 +61,8 @@
 
     <main class="content">
       <header id="introduction">
-        <h1><i class="fa-brands fa-js" style="margin-right: 12px; color: var(--text-muted);"></i>JavaScript Moderne</h1>
-        <p class="lead">Concepts ES6+, manipulation du DOM et programmation asynchrone. Le sujet ne se limite pas à faire apparaître une interface ou une réponse HTTP. Il faut apprendre à structurer les flux, découper les responsabilités et garder du code maintenable quand le projet grandit.</p>
+        <h1><i class="fa-brands fa-vuejs" style="margin-right: 12px; color: var(--text-muted);"></i>Vue.js 3</h1>
+        <p class="lead">Composition API, réactivité, Vue Router et gestion d&#x27;état avec Pinia. Le sujet ne se limite pas à faire apparaître une interface ou une réponse HTTP. Il faut apprendre à structurer les flux, découper les responsabilités et garder du code maintenable quand le projet grandit.</p>
 
         <div class="stats-grid">
           <div class="stat">
@@ -82,58 +82,58 @@
         <div class="grid-2">
           <div class="card">
             <h3>Ce que vous allez maîtriser</h3>
-            <p>Comprendre le rôle exact de types et fonctions et de tableaux et objets dans un cas concret.</p>
+            <p>Comprendre le rôle exact de Composition API et de réactivité dans un cas concret.</p>
           </div>
           <div class="card">
             <h3>Décisions techniques</h3>
-            <p>Savoir quand introduire DOM et quand une solution plus simple reste préférable.</p>
+            <p>Savoir quand introduire Vue Router et Pinia et quand une solution plus simple reste préférable.</p>
           </div>
           <div class="card">
             <h3>Réflexes de qualité</h3>
-            <p>Repérer les erreurs récurrentes autour de asynchrone avant qu’elles ne se transforment en dette ou en bug.</p>
+            <p>Repérer les erreurs récurrentes autour de architecture de composants avant qu’elles ne se transforment en dette ou en bug.</p>
           </div>
           <div class="card">
             <h3>Projet de validation</h3>
-            <p>Terminer par développer une petite interface interactive qui manipule des données et le DOM.</p>
+            <p>Terminer par construire une application Vue 3 modulaire avec état partagé et navigation propre.</p>
           </div>
         </div>
       </header>
 
       <section id="cadrage">
         <h2>1. Ce que couvre le cours</h2>
-        <p>Sur JavaScript Moderne, le vrai apprentissage consiste à faire circuler correctement l’information entre interface, logique, transport et stockage. Les notions de types et fonctions, tableaux et objets, DOM et asynchrone doivent donc être reliées à un cas d’usage cohérent et maintenable.</p>
-        <p>Le fil rouge du cours est simple: terminer par développer une petite interface interactive qui manipule des données et le DOM. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
+        <p>Sur Vue.js 3, le vrai apprentissage consiste à faire circuler correctement l’information entre interface, logique, transport et stockage. Les notions de Composition API, réactivité, Vue Router et Pinia et architecture de composants doivent donc être reliées à un cas d’usage cohérent et maintenable.</p>
+        <p>Le fil rouge du cours est simple: terminer par construire une application Vue 3 modulaire avec état partagé et navigation propre. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
         <pre>Prérequis conseillés:
 - maîtriser les bases du HTML, du HTTP ou du JavaScript selon le sujet
 - savoir lancer un projet localement
 - être prêt à raisonner sur structure, données et maintenance
 
 À la fin du cours, vous devrez être capable de:
-- expliquer types et fonctions, tableaux et objets, DOM et asynchrone dans vos propres mots
-- prendre une décision défendable sur DOM
-- vérifier le comportement ou la qualité autour de asynchrone
-- livrer développer une petite interface interactive qui manipule des données et le DOM</pre>
+- expliquer Composition API, réactivité, Vue Router et Pinia et architecture de composants dans vos propres mots
+- prendre une décision défendable sur Vue Router et Pinia
+- vérifier le comportement ou la qualité autour de architecture de composants
+- livrer construire une application Vue 3 modulaire avec état partagé et navigation propre</pre>
       </section>
 
       <section id="concepts">
         <h2>2. Concepts clés</h2>
-        <p>Le cœur du sujet tient dans types et fonctions, tableaux et objets, DOM et asynchrone. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
+        <p>Le cœur du sujet tient dans Composition API, réactivité, Vue Router et Pinia et architecture de composants. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
         <div class="grid-2">
           <div class="card">
-            <h3>types et fonctions</h3>
-            <p>Le rôle exact de types et fonctions dans un flux web réel: où il intervient, ce qu’il simplifie et ce qu’il déplace dans l’architecture.</p>
+            <h3>Composition API</h3>
+            <p>Le rôle exact de Composition API dans un flux web réel: où il intervient, ce qu’il simplifie et ce qu’il déplace dans l’architecture.</p>
           </div>
           <div class="card">
-            <h3>tableaux et objets</h3>
-            <p>Ce que tableaux et objets apporte quand l’application grandit: clarté, découpage, robustesse ou meilleure circulation des données.</p>
+            <h3>réactivité</h3>
+            <p>Ce que réactivité apporte quand l’application grandit: clarté, découpage, robustesse ou meilleure circulation des données.</p>
           </div>
           <div class="card">
-            <h3>DOM</h3>
-            <p>Les erreurs typiques autour de DOM quand on l’introduit trop tôt ou sans contrat technique clair.</p>
+            <h3>Vue Router et Pinia</h3>
+            <p>Les erreurs typiques autour de Vue Router et Pinia quand on l’introduit trop tôt ou sans contrat technique clair.</p>
           </div>
           <div class="card">
-            <h3>asynchrone</h3>
-            <p>Comment relier asynchrone à la maintenance quotidienne, aux tests et à la compréhension du projet par une autre personne.</p>
+            <h3>architecture de composants</h3>
+            <p>Comment relier architecture de composants à la maintenance quotidienne, aux tests et à la compréhension du projet par une autre personne.</p>
           </div>
         </div>
         <p>Si vous êtes capable de relier ces quatre briques à un cas concret, d’expliquer leurs compromis et d’identifier ce qu’elles changent réellement dans le résultat final, alors la base du cours est solide.</p>
@@ -144,30 +144,30 @@
         <p>Le plus rentable est d’avancer par incréments: un cas minimal, une structure lisible, puis des raffinements successifs appuyés par des vérifications concrètes.</p>
         <ol>
           <li>Commencer par le flux utilisateur ou le contrat HTTP le plus simple possible.</li>
-          <li>Implémenter types et fonctions puis tableaux et objets sans disperser la logique dans trop d’endroits.</li>
-          <li>Introduire DOM seulement après avoir rendu le comportement de base lisible et testable.</li>
-          <li>Ajouter validation, erreurs et contrôle de asynchrone avant d’ouvrir le périmètre.</li>
-          <li>Terminer par développer une petite interface interactive qui manipule des données et le DOM avec un parcours démontrable de bout en bout.</li>
+          <li>Implémenter Composition API puis réactivité sans disperser la logique dans trop d’endroits.</li>
+          <li>Introduire Vue Router et Pinia seulement après avoir rendu le comportement de base lisible et testable.</li>
+          <li>Ajouter validation, erreurs et contrôle de architecture de composants avant d’ouvrir le périmètre.</li>
+          <li>Terminer par construire une application Vue 3 modulaire avec état partagé et navigation propre avec un parcours démontrable de bout en bout.</li>
         </ol>
       </section>
 
       <section id="cas-pratique">
         <h2>4. Cas pratique</h2>
-        <p>Sur un vrai projet web, le niveau se voit dans la qualité du flux plus que dans la quantité de fonctionnalités. Le cas pratique ci-dessous sert à relier interface, contrat, état, erreurs et structure de code autour de développer une petite interface interactive qui manipule des données et le DOM.</p>
-        <p>L’idée n’est pas de tout coder d’un coup, mais de construire un chemin clair où types et fonctions, tableaux et objets, DOM et asynchrone apparaissent chacun au bon endroit.</p>
+        <p>Sur un vrai projet web, le niveau se voit dans la qualité du flux plus que dans la quantité de fonctionnalités. Le cas pratique ci-dessous sert à relier interface, contrat, état, erreurs et structure de code autour de construire une application Vue 3 modulaire avec état partagé et navigation propre.</p>
+        <p>L’idée n’est pas de tout coder d’un coup, mais de construire un chemin clair où Composition API, réactivité, Vue Router et Pinia et architecture de composants apparaissent chacun au bon endroit.</p>
         <pre>Flux de référence
 
-Objectif: développer une petite interface interactive qui manipule des données et le DOM
-UI / contrat: mettre en scène types et fonctions puis tableaux et objets
-Architecture: introduire DOM sans perdre la lisibilité du flux
-Qualité attendue: erreurs, validation et contrôle autour de asynchrone
+Objectif: construire une application Vue 3 modulaire avec état partagé et navigation propre
+UI / contrat: mettre en scène Composition API puis réactivité
+Architecture: introduire Vue Router et Pinia sans perdre la lisibilité du flux
+Qualité attendue: erreurs, validation et contrôle autour de architecture de composants
 
 À vérifier:
 - chemin nominal
 - erreur réseau ou erreur serveur
 - données manquantes ou incomplètes
 - comportement après modification ou rechargement</pre>
-        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de asynchrone dans le contexte choisi.</p>
+        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de architecture de composants dans le contexte choisi.</p>
       </section>
 
       <section id="vigilance">
@@ -175,55 +175,55 @@ Qualité attendue: erreurs, validation et contrôle autour de asynchrone
         <p>Les problèmes coûteux reviennent rarement parce qu’une notion manque au programme. Ils reviennent surtout parce qu’une notion est mal située, mal vérifiée ou introduite sans nécessité.</p>
         <div class="grid-2">
           <div class="card">
-            <h3>Mélanger rendu, données et effets de bord</h3>
-            <p>Quand tout vit dans le même composant ou la même route, la maintenance devient vite douloureuse.</p>
+            <h3>Mettre toute la logique dans les composants</h3>
+            <p>La Composition API sert justement à extraire des responsabilités lisibles dans des composables.</p>
           </div>
           <div class="card">
-            <h3>Reporter la validation et la gestion des erreurs</h3>
-            <p>Un vrai flux web doit prévoir chargement, erreur, absence de données et reprise après échec.</p>
+            <h3>Créer un état global trop large</h3>
+            <p>Pinia doit porter l’état partagé utile, pas devenir un dépôt où tout finit par vivre.</p>
           </div>
           <div class="card">
-            <h3>Créer plusieurs sources de vérité</h3>
-            <p>Dupliquer l’état ou les transformations produit des divergences difficiles à diagnostiquer.</p>
+            <h3>Mélanger refs, computed et watchers sans règle</h3>
+            <p>Chaque primitive réactive a un rôle. Les confondre brouille le comportement réel.</p>
           </div>
           <div class="card">
-            <h3>Optimiser à l’aveugle</h3>
-            <p>La performance utile part d’un symptôme mesuré, pas d’un réflexe générique ou d’un effet de mode.</p>
+            <h3>Compter sur la magie du framework</h3>
+            <p>Vue simplifie beaucoup de choses, mais il faut quand même une vraie discipline de découpage et de tests.</p>
           </div>
         </div>
       </section>
 
       <section id="projet">
         <h2>6. Projet guidé</h2>
-        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de développer une petite interface interactive qui manipule des données et le DOM.</p>
+        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de construire une application Vue 3 modulaire avec état partagé et navigation propre.</p>
         <ol>
           <li>Fixez un périmètre volontairement réduit afin de finir proprement et de pouvoir expliquer chaque décision.</li>
-          <li>Introduisez types et fonctions et tableaux et objets sur un cas simple avant d’ajouter davantage de surface.</li>
-          <li>Ajoutez ensuite DOM au moment où son intérêt devient visible dans le flux ou la structure.</li>
-          <li>Vérifiez explicitement asynchrone avec un test, une mesure, une revue, un benchmark ou une observation.</li>
-          <li>Concluez par développer une petite interface interactive qui manipule des données et le DOM avec une courte note sur les arbitrages, les limites et la suite logique.</li>
+          <li>Introduisez Composition API et réactivité sur un cas simple avant d’ajouter davantage de surface.</li>
+          <li>Ajoutez ensuite Vue Router et Pinia au moment où son intérêt devient visible dans le flux ou la structure.</li>
+          <li>Vérifiez explicitement architecture de composants avec un test, une mesure, une revue, un benchmark ou une observation.</li>
+          <li>Concluez par construire une application Vue 3 modulaire avec état partagé et navigation propre avec une courte note sur les arbitrages, les limites et la suite logique.</li>
         </ol>
         <pre>Définition de terminé
 
-Sujet: développer une petite interface interactive qui manipule des données et le DOM
-Objectif pédagogique: consolider JavaScript Moderne
+Sujet: construire une application Vue 3 modulaire avec état partagé et navigation propre
+Objectif pédagogique: consolider Vue.js 3
 Le travail doit montrer:
-- une compréhension exploitable de types et fonctions
-- une mise en œuvre lisible autour de tableaux et objets
-- une décision argumentée concernant DOM
-- une vérification explicite sur asynchrone</pre>
+- une compréhension exploitable de Composition API
+- une mise en œuvre lisible autour de réactivité
+- une décision argumentée concernant Vue Router et Pinia
+- une vérification explicite sur architecture de composants</pre>
       </section>
 
       <section id="exercices">
         <h2>7. Exercices</h2>
         <p>Ne répondez pas par définition. Le bon niveau est celui d’une personne capable d’argumenter, de comparer et de dire ce qu’elle vérifierait en pratique.</p>
         <ol>
-          <li>Expliquez où placeriez-vous types et fonctions et pourquoi cette responsabilité ne doit pas glisser ailleurs dans le projet.</li>
-          <li>Donnez un exemple de bug provoqué par une mauvaise gestion de tableaux et objets.</li>
-          <li>Dans quel contexte DOM améliore réellement le projet, et dans quel contexte il ajoute surtout de la complexité ?</li>
-          <li>Quelles vérifications minimales faut-il garder autour de asynchrone avant de considérer le flux comme fiable ?</li>
+          <li>Expliquez où placeriez-vous Composition API et pourquoi cette responsabilité ne doit pas glisser ailleurs dans le projet.</li>
+          <li>Donnez un exemple de bug provoqué par une mauvaise gestion de réactivité.</li>
+          <li>Dans quel contexte Vue Router et Pinia améliore réellement le projet, et dans quel contexte il ajoute surtout de la complexité ?</li>
+          <li>Quelles vérifications minimales faut-il garder autour de architecture de composants avant de considérer le flux comme fiable ?</li>
           <li>Décrivez les états indispensables d’un parcours complet: chargement, erreur, succès, absence de données, reprise.</li>
-          <li>Donnez la définition de terminé que vous retiendriez pour développer une petite interface interactive qui manipule des données et le DOM.</li>
+          <li>Donnez la définition de terminé que vous retiendriez pour construire une application Vue 3 modulaire avec état partagé et navigation propre.</li>
         </ol>
       </section>
     </main>

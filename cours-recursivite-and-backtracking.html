@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cours Logique et Algorithmique</title>
+  <title>Cours Récursivité &amp; Backtracking</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -54,15 +54,15 @@
       <h4 style="margin-top: 40px;">Repères</h4>
       <div class="meta-pills">
         <span class="pill">Algorithmique</span>
-        <span class="pill">Débutant</span>
-        <span class="pill">5 heures</span>
+        <span class="pill">Intermédiaire</span>
+        <span class="pill">4 heures</span>
       </div>
     </aside>
 
     <main class="content">
       <header id="introduction">
-        <h1><i class="fa-solid fa-diagram-project" style="margin-right: 12px; color: var(--text-muted);"></i>Logique et Algorithmique</h1>
-        <p class="lead">Variables, boucles, fonctions et premiers pas vers la pensée algorithmique. Le but n’est pas de réciter un pseudo-code. Le vrai travail consiste à relier forme des données, invariants, coût temporel et coût mémoire pour choisir une solution défendable.</p>
+        <h1><i class="fa-solid fa-brain" style="margin-right: 12px; color: var(--text-muted);"></i>Récursivité &amp; Backtracking</h1>
+        <p class="lead">Fonctions récursives, cas de base et résolution de problèmes par backtracking. Le but n’est pas de réciter un pseudo-code. Le vrai travail consiste à relier forme des données, invariants, coût temporel et coût mémoire pour choisir une solution défendable.</p>
 
         <div class="stats-grid">
           <div class="stat">
@@ -71,69 +71,69 @@
           </div>
           <div class="stat">
             <span class="stat-label">Niveau</span>
-            <strong>Débutant</strong>
+            <strong>Intermédiaire</strong>
           </div>
           <div class="stat">
             <span class="stat-label">Temps</span>
-            <strong>5 heures</strong>
+            <strong>4 heures</strong>
           </div>
         </div>
 
         <div class="grid-2">
           <div class="card">
             <h3>Ce que vous allez maîtriser</h3>
-            <p>Comprendre le rôle exact de variables et mémoire et de conditions et boucles dans un cas concret.</p>
+            <p>Comprendre le rôle exact de cas de base et de pile d’appel dans un cas concret.</p>
           </div>
           <div class="card">
             <h3>Décisions techniques</h3>
-            <p>Savoir quand introduire fonctions et décomposition et quand une solution plus simple reste préférable.</p>
+            <p>Savoir quand introduire retour arrière et quand une solution plus simple reste préférable.</p>
           </div>
           <div class="card">
             <h3>Réflexes de qualité</h3>
-            <p>Repérer les erreurs récurrentes autour de complexité avant qu’elles ne se transforment en dette ou en bug.</p>
+            <p>Repérer les erreurs récurrentes autour de élagage avant qu’elles ne se transforment en dette ou en bug.</p>
           </div>
           <div class="card">
             <h3>Projet de validation</h3>
-            <p>Terminer par concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple.</p>
+            <p>Terminer par résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning.</p>
           </div>
         </div>
       </header>
 
       <section id="cadrage">
         <h2>1. Ce que couvre le cours</h2>
-        <p>Sur Logique et Algorithmique, vous allez apprendre à comparer variables et mémoire, conditions et boucles, fonctions et décomposition et complexité sans vous contenter d’un classement théorique. L’objectif est de savoir expliquer pourquoi une solution est meilleure dans un contexte donné, pas juste de la reconnaître à son nom.</p>
-        <p>Le fil rouge du cours est simple: terminer par concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
+        <p>Sur Récursivité &amp; Backtracking, vous allez apprendre à comparer cas de base, pile d’appel, retour arrière et élagage sans vous contenter d’un classement théorique. L’objectif est de savoir expliquer pourquoi une solution est meilleure dans un contexte donné, pas juste de la reconnaître à son nom.</p>
+        <p>Le fil rouge du cours est simple: terminer par résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
         <pre>Prérequis conseillés:
 - savoir lire un pseudo-code simple
 - être à l’aise avec tableaux, boucles et conditions
 - accepter de justifier chaque choix par un coût ou un invariant
 
 À la fin du cours, vous devrez être capable de:
-- expliquer variables et mémoire, conditions et boucles, fonctions et décomposition et complexité dans vos propres mots
-- prendre une décision défendable sur fonctions et décomposition
-- vérifier le comportement ou la qualité autour de complexité
-- livrer concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple</pre>
+- expliquer cas de base, pile d’appel, retour arrière et élagage dans vos propres mots
+- prendre une décision défendable sur retour arrière
+- vérifier le comportement ou la qualité autour de élagage
+- livrer résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning</pre>
       </section>
 
       <section id="concepts">
         <h2>2. Concepts clés</h2>
-        <p>Le cœur du sujet tient dans variables et mémoire, conditions et boucles, fonctions et décomposition et complexité. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
+        <p>Le cœur du sujet tient dans cas de base, pile d’appel, retour arrière et élagage. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
         <div class="grid-2">
           <div class="card">
-            <h3>variables et mémoire</h3>
-            <p>À quoi sert variables et mémoire, quelles hypothèses il fait sur l’entrée et comment reconnaître un cas où il devient intéressant.</p>
+            <h3>cas de base</h3>
+            <p>À quoi sert cas de base, quelles hypothèses il fait sur l’entrée et comment reconnaître un cas où il devient intéressant.</p>
           </div>
           <div class="card">
-            <h3>conditions et boucles</h3>
-            <p>Les compromis portés par conditions et boucles: coût, lisibilité, stabilité, mémoire ou simplicité d’implémentation.</p>
+            <h3>pile d’appel</h3>
+            <p>Les compromis portés par pile d’appel: coût, lisibilité, stabilité, mémoire ou simplicité d’implémentation.</p>
           </div>
           <div class="card">
-            <h3>fonctions et décomposition</h3>
-            <p>Quand fonctions et décomposition devient préférable à une approche plus naïve et quels détails changent réellement le résultat.</p>
+            <h3>retour arrière</h3>
+            <p>Quand retour arrière devient préférable à une approche plus naïve et quels détails changent réellement le résultat.</p>
           </div>
           <div class="card">
-            <h3>complexité</h3>
-            <p>Ce qu’il faut vérifier autour de complexité pour comparer honnêtement plusieurs solutions.</p>
+            <h3>élagage</h3>
+            <p>Ce qu’il faut vérifier autour de élagage pour comparer honnêtement plusieurs solutions.</p>
           </div>
         </div>
         <p>Si vous êtes capable de relier ces quatre briques à un cas concret, d’expliquer leurs compromis et d’identifier ce qu’elles changent réellement dans le résultat final, alors la base du cours est solide.</p>
@@ -144,22 +144,22 @@
         <p>Le plus rentable est d’avancer par incréments: un cas minimal, une structure lisible, puis des raffinements successifs appuyés par des vérifications concrètes.</p>
         <ol>
           <li>Partir d’une version naïve pour clarifier les entrées, la sortie et l’invariant principal.</li>
-          <li>Introduire ensuite variables et mémoire puis conditions et boucles sur de petits exemples où leur intérêt est visible.</li>
-          <li>Comparer le comportement de fonctions et décomposition sur plusieurs formes d’entrée au lieu de lui faire confiance par principe.</li>
-          <li>Verifier les cas limites, la mémoire et les effets de complexité avec des tests ciblés.</li>
-          <li>Conclure par concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple avec une comparaison explicitée entre au moins deux approches.</li>
+          <li>Introduire ensuite cas de base puis pile d’appel sur de petits exemples où leur intérêt est visible.</li>
+          <li>Comparer le comportement de retour arrière sur plusieurs formes d’entrée au lieu de lui faire confiance par principe.</li>
+          <li>Verifier les cas limites, la mémoire et les effets de élagage avec des tests ciblés.</li>
+          <li>Conclure par résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning avec une comparaison explicitée entre au moins deux approches.</li>
         </ol>
       </section>
 
       <section id="cas-pratique">
         <h2>4. Cas pratique</h2>
-        <p>Le meilleur moyen d’apprendre Logique et Algorithmique consiste à comparer plusieurs solutions sur une même famille de problèmes. Tant que vous ne confrontez pas variables et mémoire, conditions et boucles et fonctions et décomposition à des entrées différentes, vous ne voyez pas vraiment ce qu’apporte complexité dans la décision finale.</p>
+        <p>Le meilleur moyen d’apprendre Récursivité &amp; Backtracking consiste à comparer plusieurs solutions sur une même famille de problèmes. Tant que vous ne confrontez pas cas de base, pile d’appel et retour arrière à des entrées différentes, vous ne voyez pas vraiment ce qu’apporte élagage dans la décision finale.</p>
         <p>Le cas pratique ci-dessous sert donc de laboratoire: on part d’un besoin concret, on teste une première approche, on la mesure, puis on défend ou on abandonne son choix.</p>
         <pre>Cas pratique
 
-Problème: concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple
-Entrée: une collection où variables et mémoire et conditions et boucles peuvent mener à des choix différents
-Questions à trancher: quand fonctions et décomposition devient-il pertinent ? que révèle complexité ?
+Problème: résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning
+Entrée: une collection où cas de base et pile d’appel peuvent mener à des choix différents
+Questions à trancher: quand retour arrière devient-il pertinent ? que révèle élagage ?
 
 Pseudo-code de travail:
 1. décrire précisément la structure d’entrée
@@ -167,7 +167,7 @@ Pseudo-code de travail:
 3. mesurer ou raisonner sur le coût
 4. comparer avec une alternative
 5. conclure avec des cas limites explicites</pre>
-        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de complexité dans le contexte choisi.</p>
+        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de élagage dans le contexte choisi.</p>
       </section>
 
       <section id="vigilance">
@@ -195,35 +195,35 @@ Pseudo-code de travail:
 
       <section id="projet">
         <h2>6. Projet guidé</h2>
-        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple.</p>
+        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning.</p>
         <ol>
           <li>Fixez un périmètre volontairement réduit afin de finir proprement et de pouvoir expliquer chaque décision.</li>
-          <li>Introduisez variables et mémoire et conditions et boucles sur un cas simple avant d’ajouter davantage de surface.</li>
-          <li>Ajoutez ensuite fonctions et décomposition au moment où son intérêt devient visible dans le flux ou la structure.</li>
-          <li>Vérifiez explicitement complexité avec un test, une mesure, une revue, un benchmark ou une observation.</li>
-          <li>Concluez par concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple avec une courte note sur les arbitrages, les limites et la suite logique.</li>
+          <li>Introduisez cas de base et pile d’appel sur un cas simple avant d’ajouter davantage de surface.</li>
+          <li>Ajoutez ensuite retour arrière au moment où son intérêt devient visible dans le flux ou la structure.</li>
+          <li>Vérifiez explicitement élagage avec un test, une mesure, une revue, un benchmark ou une observation.</li>
+          <li>Concluez par résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning avec une courte note sur les arbitrages, les limites et la suite logique.</li>
         </ol>
         <pre>Définition de terminé
 
-Sujet: concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple
-Objectif pédagogique: consolider Logique et Algorithmique
+Sujet: résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning
+Objectif pédagogique: consolider Récursivité &amp; Backtracking
 Le travail doit montrer:
-- une compréhension exploitable de variables et mémoire
-- une mise en œuvre lisible autour de conditions et boucles
-- une décision argumentée concernant fonctions et décomposition
-- une vérification explicite sur complexité</pre>
+- une compréhension exploitable de cas de base
+- une mise en œuvre lisible autour de pile d’appel
+- une décision argumentée concernant retour arrière
+- une vérification explicite sur élagage</pre>
       </section>
 
       <section id="exercices">
         <h2>7. Exercices</h2>
         <p>Ne répondez pas par définition. Le bon niveau est celui d’une personne capable d’argumenter, de comparer et de dire ce qu’elle vérifierait en pratique.</p>
         <ol>
-          <li>Expliquez dans quel cas variables et mémoire est préférable à conditions et boucles, avec une justification de complexité et non une simple intuition.</li>
-          <li>Donnez un exemple de problème où fonctions et décomposition n’apporte rien par rapport à une solution plus simple.</li>
-          <li>Identifiez trois cas limites qui forcent à regarder complexité de près.</li>
+          <li>Expliquez dans quel cas cas de base est préférable à pile d’appel, avec une justification de complexité et non une simple intuition.</li>
+          <li>Donnez un exemple de problème où retour arrière n’apporte rien par rapport à une solution plus simple.</li>
+          <li>Identifiez trois cas limites qui forcent à regarder élagage de près.</li>
           <li>Proposez une version naïve puis une amélioration progressive, en expliquant exactement ce qui a été optimisé.</li>
           <li>Définissez un protocole de test qui distingue correction logique, coût et mémoire.</li>
-          <li>Présentez comment vous défendriez concevoir puis expliquer plusieurs petits algorithmes du quotidien en pseudo-code et en code simple face à quelqu’un qui préfère une autre approche.</li>
+          <li>Présentez comment vous défendriez résoudre un problème de recherche exhaustive en contrôlant la récursion et le pruning face à quelqu’un qui préfère une autre approche.</li>
         </ol>
       </section>
     </main>

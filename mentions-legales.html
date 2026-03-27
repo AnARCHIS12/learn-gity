@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales - RevLearn</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="cours-template.css">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 128 128" width="20" height="20">
+          <path fill="#000" d="M125.4 54.8L73.2 2.6c-3.4-3.4-9-3.4-12.4 0L49 14.4l16.1 16.1c3.1-.7 6.5.2 8.7 2.4 2.8 2.8 3.5 6.8 1.8 10.1l15.1 15.1c3.3-1.6 7.3-1 10.1 1.8 3.9 3.9 3.9 10.2 0 14.1-3.9 3.9-10.2 3.9-14.1 0-2.6-2.6-3.4-6.3-2-9.5l-14-14c-1 3.2-3.7 5.7-7.2 6.5v22c1.8 1.1 3 3 3 5.3 0 3.5-2.8 6.3-6.3 6.3s-6.3-2.8-6.3-6.3c0-2.3 1.2-4.2 3-5.3v-22c-3.5-.8-6.2-3.4-7.2-6.5l-14 14c1.4 3.2.6 6.9-2 9.5-3.9 3.9-10.2 3.9-14.1 0-3.9-3.9-3.9-10.2 0-14.1 2.8-2.8 6.8-3.4 10.1-1.8l15.1-15.1c-1.6-3.3-1-7.3 1.8-10.1 2.2-2.2 5.6-3.1 8.7-2.4l-16.1-16.1-23.4 23.4c-3.4 3.4-3.4 9 0 12.4l52.2 52.2c3.4 3.4 9 3.4 12.4 0l52.2-52.2c3.4-3.4 3.4-8.9 0-12.3z"/>
+        </svg>
+        RevLearn
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Catalogue</a>
+        <a href="nouveautes.html">Nouveautés</a>
+        <a href="#projet" class="active">Mentions</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h4>Sommaire</h4>
+      <nav>
+        <a href="#projet">Projet</a>
+        <a href="#edition">Édition</a>
+        <a href="#hebergement">Hébergement</a>
+        <a href="#propriete">Propriété</a>
+        <a href="#liens">Liens externes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <h4 style="margin-top: 40px;">Repères</h4>
+      <div class="meta-pills">
+        <span class="pill">Information</span>
+        <span class="pill">Projet open source</span>
+        <span class="pill">27 mars 2026</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header id="projet">
+        <h1><i class="fa-solid fa-scale-balanced" style="margin-right: 12px; color: var(--text-muted);"></i>Mentions légales</h1>
+        <p class="lead">Cette page rassemble les informations générales disponibles sur le projet RevLearn et sur le dépôt source associé. Elle a été rédigée à partir des éléments présents dans ce projet statique et doit être complétée si vous en faites un site public avec des obligations spécifiques.</p>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-label">Projet</span>
+            <strong>RevLearn</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Source</span>
+            <strong>GitHub</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Mise à jour</span>
+            <strong>27 mars 2026</strong>
+          </div>
+        </div>
+      </header>
+
+      <section id="edition">
+        <h2>1. Édition du projet</h2>
+        <p>RevLearn est présenté ici comme un projet open source distribué sous forme de fichiers statiques. Le dépôt source fourni pour ce site est accessible à l'adresse <a href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">github.com/AnARCHIS12/learn-gity</a>.</p>
+        <p>Le propriétaire visible du dépôt au moment de la rédaction est le compte GitHub <strong>AnARCHIS12</strong>. Si vous exploitez ce site publiquement sous votre propre nom, il vous revient de compléter cette page avec les informations d'édition et de contact adaptées à votre situation.</p>
+      </section>
+
+      <section id="hebergement">
+        <h2>2. Hébergement</h2>
+        <p>Ce projet peut être déployé de différentes manières. Lorsqu'il est publié depuis l'URL renseignée dans le dépôt GitHub, il est raisonnable d'en déduire qu'une mise en ligne via GitHub Pages peut être utilisée. Si vous changez d'hébergeur, cette information doit être adaptée.</p>
+        <p>Le code source local que vous utilisez ici ne contient pas, à lui seul, la preuve définitive du mode d'hébergement actuellement actif. Cette page reste donc volontairement prudente sur ce point.</p>
+      </section>
+
+      <section id="propriete">
+        <h2>3. Propriété intellectuelle</h2>
+        <p>Le code, le design et les contenus de cours présents dans ce projet restent soumis aux conditions choisies par l'auteur ou les auteurs du dépôt. Aucun fichier de licence explicite n'est présent à la racine du projet local au moment de cette rédaction.</p>
+        <p>En pratique, si vous souhaitez réutiliser largement le contenu, republier des cours ou redistribuer le site, il est préférable d'obtenir l'accord du propriétaire du dépôt ou d'ajouter une licence claire au projet avant diffusion.</p>
+      </section>
+
+      <section id="liens">
+        <h2>4. Liens externes et services utilisés</h2>
+        <p>Le site peut charger des ressources externes comme Bunny Fonts, cdnjs pour les icônes Font Awesome et GitHub pour le dépôt ou le suivi des problèmes. Ces services disposent de leurs propres conditions d'utilisation et politiques de confidentialité.</p>
+        <p>Lorsque vous cliquez sur un lien externe, vous quittez le périmètre du site RevLearn et vous dépendez alors des règles du service visité.</p>
+      </section>
+
+      <section id="contact">
+        <h2>5. Contact</h2>
+        <p>Le moyen de contact le plus direct renseigné dans ce projet est le dépôt GitHub: <a href="https://github.com/AnARCHIS12/learn-gity/issues" target="_blank" rel="noopener noreferrer">ouvrir une issue</a>.</p>
+        <p>Si vous transformez ce site en publication publique durable, ajoutez ici vos informations de contact réelles et les éléments légaux requis par votre cadre de diffusion.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>RevLearn, projet d'apprentissage ouvert et accessible.</p>
+    <p style="margin-top: 10px;">
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">Dépôt GitHub</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity/issues" target="_blank" rel="noopener noreferrer">Signaler un problème</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="politique-confidentialite.html">Politique de confidentialité</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="mentions-legales.html">Mentions légales</a>
+    </p>
+  </footer>
+
+</body>
+</html>

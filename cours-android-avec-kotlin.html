@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours Android avec Kotlin</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="cours-template.css">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 128 128" width="20" height="20">
+          <path fill="#000" d="M125.4 54.8L73.2 2.6c-3.4-3.4-9-3.4-12.4 0L49 14.4l16.1 16.1c3.1-.7 6.5.2 8.7 2.4 2.8 2.8 3.5 6.8 1.8 10.1l15.1 15.1c3.3-1.6 7.3-1 10.1 1.8 3.9 3.9 3.9 10.2 0 14.1-3.9 3.9-10.2 3.9-14.1 0-2.6-2.6-3.4-6.3-2-9.5l-14-14c-1 3.2-3.7 5.7-7.2 6.5v22c1.8 1.1 3 3 3 5.3 0 3.5-2.8 6.3-6.3 6.3s-6.3-2.8-6.3-6.3c0-2.3 1.2-4.2 3-5.3v-22c-3.5-.8-6.2-3.4-7.2-6.5l-14 14c1.4 3.2.6 6.9-2 9.5-3.9 3.9-10.2 3.9-14.1 0-3.9-3.9-3.9-10.2 0-14.1 2.8-2.8 6.8-3.4 10.1-1.8l15.1-15.1c-1.6-3.3-1-7.3 1.8-10.1 2.2-2.2 5.6-3.1 8.7-2.4l-16.1-16.1-23.4 23.4c-3.4 3.4-3.4 9 0 12.4l52.2 52.2c3.4 3.4 9 3.4 12.4 0l52.2-52.2c3.4-3.4 3.4-8.9 0-12.3z"/>
+        </svg>
+        RevLearn
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Catalogue</a>
+        <a href="nouveautes.html">Nouveautés</a>
+        <a href="#introduction" class="active">Cours</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h4>Sommaire</h4>
+      <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#cadrage">Ce que couvre le cours</a>
+        <a href="#concepts">Concepts clés</a>
+        <a href="#progression">Progression recommandée</a>
+        <a href="#cas-pratique">Cas pratique</a>
+        <a href="#vigilance">Erreurs fréquentes</a>
+        <a href="#projet">Projet guidé</a>
+        <a href="#exercices">Exercices</a>
+      </nav>
+
+      <h4 style="margin-top: 40px;">Repères</h4>
+      <div class="meta-pills">
+        <span class="pill">Développement Mobile</span>
+        <span class="pill">Intermédiaire</span>
+        <span class="pill">10 heures</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header id="introduction">
+        <h1><i class="fa-brands fa-android" style="margin-right: 12px; color: var(--text-muted);"></i>Android avec Kotlin</h1>
+        <p class="lead">Activités, fragments, RecyclerView, navigation et architecture MVVM Android. Une application mobile se juge très vite sur sa fluidité, sa stabilité et sa capacité à survivre aux contraintes réelles: navigation, cycle de vie, réseau, mémoire et contexte utilisateur.</p>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-label">Domaine</span>
+            <strong>Développement Mobile</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Niveau</span>
+            <strong>Intermédiaire</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Temps</span>
+            <strong>10 heures</strong>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Ce que vous allez maîtriser</h3>
+            <p>Comprendre le rôle exact de cycle de vie Android et de RecyclerView dans un cas concret.</p>
+          </div>
+          <div class="card">
+            <h3>Décisions techniques</h3>
+            <p>Savoir quand introduire navigation et quand une solution plus simple reste préférable.</p>
+          </div>
+          <div class="card">
+            <h3>Réflexes de qualité</h3>
+            <p>Repérer les erreurs récurrentes autour de architecture MVVM avant qu’elles ne se transforment en dette ou en bug.</p>
+          </div>
+          <div class="card">
+            <h3>Projet de validation</h3>
+            <p>Terminer par créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre.</p>
+          </div>
+        </div>
+      </header>
+
+      <section id="cadrage">
+        <h2>1. Ce que couvre le cours</h2>
+        <p>Sur Android avec Kotlin, vous devez passer d’un écran qui fonctionne en démonstration à une application qui reste propre quand on navigue, qu’on recharge, qu’on change d’orientation ou que le réseau devient instable. cycle de vie Android, RecyclerView, navigation et architecture MVVM servent à construire cette solidité.</p>
+        <p>Le fil rouge du cours est simple: terminer par créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
+        <pre>Prérequis conseillés:
+- avoir les bases du langage du cours
+- savoir lancer une application sur simulateur ou appareil
+- comprendre qu’une app mobile se juge sur la fluidité autant que sur le code
+
+À la fin du cours, vous devrez être capable de:
+- expliquer cycle de vie Android, RecyclerView, navigation et architecture MVVM dans vos propres mots
+- prendre une décision défendable sur navigation
+- vérifier le comportement ou la qualité autour de architecture MVVM
+- livrer créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre</pre>
+      </section>
+
+      <section id="concepts">
+        <h2>2. Concepts clés</h2>
+        <p>Le cœur du sujet tient dans cycle de vie Android, RecyclerView, navigation et architecture MVVM. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>cycle de vie Android</h3>
+            <p>Ce que cycle de vie Android change dans la structure de l’application et dans son comportement réel sur appareil.</p>
+          </div>
+          <div class="card">
+            <h3>RecyclerView</h3>
+            <p>Les contraintes de cycle de vie, de fluidité ou de navigation qui rendent RecyclerView incontournable.</p>
+          </div>
+          <div class="card">
+            <h3>navigation</h3>
+            <p>Les décisions d’architecture à prendre pour utiliser navigation sans rendre l’application rigide ou fragile.</p>
+          </div>
+          <div class="card">
+            <h3>architecture MVVM</h3>
+            <p>Les points de contrôle à observer autour de architecture MVVM: reprise d’état, temps d’affichage, stabilité, robustesse.</p>
+          </div>
+        </div>
+        <p>Si vous êtes capable de relier ces quatre briques à un cas concret, d’expliquer leurs compromis et d’identifier ce qu’elles changent réellement dans le résultat final, alors la base du cours est solide.</p>
+      </section>
+
+      <section id="progression">
+        <h2>3. Progression recommandée</h2>
+        <p>Le plus rentable est d’avancer par incréments: un cas minimal, une structure lisible, puis des raffinements successifs appuyés par des vérifications concrètes.</p>
+        <ol>
+          <li>Poser le flux de navigation et le périmètre d’écrans avant de multiplier les composants.</li>
+          <li>Implémenter cycle de vie Android et RecyclerView sur un cas simple pour observer cycle de vie et fluidité.</li>
+          <li>Introduire navigation avec une séparation nette entre interface, état et données.</li>
+          <li>Mesurer l’impact de architecture MVVM sur la stabilité, le rendu et la reprise après interruption.</li>
+          <li>Finaliser créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre en validant le comportement sur plusieurs scénarios d’usage.</li>
+        </ol>
+      </section>
+
+      <section id="cas-pratique">
+        <h2>4. Cas pratique</h2>
+        <p>Le cas pratique ci-dessous est pensé pour forcer la bonne séparation entre écran, état, navigation et données. C’est la zone où la plupart des applications mobiles deviennent vite difficiles à faire évoluer.</p>
+        <p>En suivant ce scénario, vous vérifiez que cycle de vie Android, RecyclerView, navigation et architecture MVVM résistent au cycle de vie et à l’usage réel, pas seulement à une démo de cinq minutes.</p>
+        <pre>Architecture cible
+
+UI
+- écran ou vue qui porte cycle de vie Android et RecyclerView
+État
+- couche intermédiaire qui orchestre navigation
+Données
+- source locale ou distante selon le sujet
+Vérifications
+- reprise, fluidité et robustesse autour de architecture MVVM</pre>
+        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de architecture MVVM dans le contexte choisi.</p>
+      </section>
+
+      <section id="vigilance">
+        <h2>5. Erreurs fréquentes</h2>
+        <p>Les problèmes coûteux reviennent rarement parce qu’une notion manque au programme. Ils reviennent surtout parce qu’une notion est mal située, mal vérifiée ou introduite sans nécessité.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Mélanger UI, état et réseau</h3>
+            <p>Sur mobile, ce mélange produit des écrans fragiles, des bugs de cycle de vie et des tests pénibles.</p>
+          </div>
+          <div class="card">
+            <h3>Ignorer reprise, rotation et arrière-plan</h3>
+            <p>Une application peut sembler correcte sur le chemin heureux et casser dès que le contexte système change.</p>
+          </div>
+          <div class="card">
+            <h3>Sous-estimer le coût des listes et du rendu</h3>
+            <p>Un écran agréable sur dix éléments peut devenir lent ou instable à plus grande échelle.</p>
+          </div>
+          <div class="card">
+            <h3>Traiter le mobile comme un desktop réduit</h3>
+            <p>Réseau instable, mémoire limitée et interactions tactiles changent réellement les décisions d’architecture.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projet">
+        <h2>6. Projet guidé</h2>
+        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre.</p>
+        <ol>
+          <li>Fixez un périmètre volontairement réduit afin de finir proprement et de pouvoir expliquer chaque décision.</li>
+          <li>Introduisez cycle de vie Android et RecyclerView sur un cas simple avant d’ajouter davantage de surface.</li>
+          <li>Ajoutez ensuite navigation au moment où son intérêt devient visible dans le flux ou la structure.</li>
+          <li>Vérifiez explicitement architecture MVVM avec un test, une mesure, une revue, un benchmark ou une observation.</li>
+          <li>Concluez par créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre avec une courte note sur les arbitrages, les limites et la suite logique.</li>
+        </ol>
+        <pre>Définition de terminé
+
+Sujet: créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre
+Objectif pédagogique: consolider Android avec Kotlin
+Le travail doit montrer:
+- une compréhension exploitable de cycle de vie Android
+- une mise en œuvre lisible autour de RecyclerView
+- une décision argumentée concernant navigation
+- une vérification explicite sur architecture MVVM</pre>
+      </section>
+
+      <section id="exercices">
+        <h2>7. Exercices</h2>
+        <p>Ne répondez pas par définition. Le bon niveau est celui d’une personne capable d’argumenter, de comparer et de dire ce qu’elle vérifierait en pratique.</p>
+        <ol>
+          <li>Expliquez le rôle de cycle de vie Android dans le cycle de vie et dans la structure générale de l’application.</li>
+          <li>Donnez un exemple où RecyclerView dégrade fortement la fluidité si le code est mal découpé.</li>
+          <li>Comment isoleriez-vous navigation pour rendre l’application plus stable et plus testable ?</li>
+          <li>Quelles mesures ou observations utiliseriez-vous pour valider architecture MVVM ?</li>
+          <li>Décrivez une stratégie de reprise après perte réseau, retour arrière ou changement de contexte système.</li>
+          <li>Présentez l’architecture minimale que vous retiendriez pour créer une application Android structurée autour d’une liste, d’un détail et d’un flux de données propre.</li>
+        </ol>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>RevLearn, projet d'apprentissage ouvert et accessible.</p>
+    <p style="margin-top: 10px;">
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">Dépôt GitHub</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity/issues" target="_blank" rel="noopener noreferrer">Signaler un problème</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="politique-confidentialite.html">Politique de confidentialité</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="mentions-legales.html">Mentions légales</a>
+    </p>
+  </footer>
+
+</body>
+</html>

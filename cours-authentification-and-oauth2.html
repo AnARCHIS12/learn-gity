@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours Authentification &amp; OAuth2</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="cours-template.css">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 128 128" width="20" height="20">
+          <path fill="#000" d="M125.4 54.8L73.2 2.6c-3.4-3.4-9-3.4-12.4 0L49 14.4l16.1 16.1c3.1-.7 6.5.2 8.7 2.4 2.8 2.8 3.5 6.8 1.8 10.1l15.1 15.1c3.3-1.6 7.3-1 10.1 1.8 3.9 3.9 3.9 10.2 0 14.1-3.9 3.9-10.2 3.9-14.1 0-2.6-2.6-3.4-6.3-2-9.5l-14-14c-1 3.2-3.7 5.7-7.2 6.5v22c1.8 1.1 3 3 3 5.3 0 3.5-2.8 6.3-6.3 6.3s-6.3-2.8-6.3-6.3c0-2.3 1.2-4.2 3-5.3v-22c-3.5-.8-6.2-3.4-7.2-6.5l-14 14c1.4 3.2.6 6.9-2 9.5-3.9 3.9-10.2 3.9-14.1 0-3.9-3.9-3.9-10.2 0-14.1 2.8-2.8 6.8-3.4 10.1-1.8l15.1-15.1c-1.6-3.3-1-7.3 1.8-10.1 2.2-2.2 5.6-3.1 8.7-2.4l-16.1-16.1-23.4 23.4c-3.4 3.4-3.4 9 0 12.4l52.2 52.2c3.4 3.4 9 3.4 12.4 0l52.2-52.2c3.4-3.4 3.4-8.9 0-12.3z"/>
+        </svg>
+        RevLearn
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Catalogue</a>
+        <a href="nouveautes.html">Nouveautés</a>
+        <a href="#introduction" class="active">Cours</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h4>Sommaire</h4>
+      <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#bases">Bases</a>
+        <a href="#sessions">Sessions &amp; cookies</a>
+        <a href="#jwt">JWT</a>
+        <a href="#oauth2">OAuth 2.0</a>
+        <a href="#oidc">OpenID Connect</a>
+        <a href="#securite">Sécurité</a>
+        <a href="#atelier">Atelier</a>
+        <a href="#exercices">Exercices</a>
+      </nav>
+
+      <h4 style="margin-top: 40px;">Repères</h4>
+      <div class="meta-pills">
+        <span class="pill">Sécurité Informatique</span>
+        <span class="pill">Intermédiaire</span>
+        <span class="pill">4 heures</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header id="introduction">
+        <h1><i class="fa-solid fa-key" style="margin-right: 12px; color: var(--text-muted);"></i>Authentification &amp; OAuth2</h1>
+        <p class="lead">Ce cours vous apprend à concevoir un système d'authentification solide sans mélanger les concepts. On part du login classique par session, on passe par les JWT, puis on aborde OAuth 2.0 et OpenID Connect avec les bons cas d'usage, les flux modernes et les erreurs qui cassent réellement la sécurité.</p>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-label">Domaine</span>
+            <strong>Sécurité Informatique</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Niveau</span>
+            <strong>Intermédiaire</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Temps</span>
+            <strong>4 heures</strong>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>À la fin du cours</h3>
+            <p>Vous saurez distinguer identité, authentification, autorisation, session, access token et ID token sans les confondre.</p>
+          </div>
+          <div class="card">
+            <h3>Choix d'architecture</h3>
+            <p>Vous pourrez décider quand utiliser des sessions serveur, quand un JWT est utile et quand il complique inutilement le système.</p>
+          </div>
+          <div class="card">
+            <h3>OAuth 2.0 concret</h3>
+            <p>Vous comprendrez le flux Authorization Code + PKCE, les rôles en présence et la raison de chaque paramètre critique.</p>
+          </div>
+          <div class="card">
+            <h3>Réflexe sécurité</h3>
+            <p>Vous saurez repérer les défauts classiques: vol de token, redirection non maîtrisée, mauvais stockage côté navigateur, fixation de session et confusion entre tokens.</p>
+          </div>
+        </div>
+      </header>
+
+      <section id="bases">
+        <h2>1. Les bases à ne pas confondre</h2>
+        <p>La plupart des systèmes d'authentification ratés ne sont pas cassés par un algorithme exotique. Ils sont cassés parce que l'équipe mélange des notions différentes. Avant de parler de protocoles, il faut donc poser le vocabulaire exact.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Identité</h3>
+            <p>L'identité est le sujet dont on parle: un utilisateur, un service, un appareil. Elle peut être locale à votre application ou fédérée par un fournisseur externe.</p>
+          </div>
+          <div class="card">
+            <h3>Authentification</h3>
+            <p>L'authentification répond à la question « qui es-tu ? ». Elle repose sur une preuve: mot de passe, clé privée, OTP, lien magique ou authentification forte.</p>
+          </div>
+          <div class="card">
+            <h3>Autorisation</h3>
+            <p>L'autorisation répond à « qu'as-tu le droit de faire ? ». Un utilisateur authentifié n'est pas automatiquement autorisé à tout. Les rôles et permissions viennent après.</p>
+          </div>
+          <div class="card">
+            <h3>Session</h3>
+            <p>La session est le moyen de se souvenir du résultat d'une authentification entre deux requêtes HTTP. Ce n'est pas une méthode de login, c'est un mécanisme d'état.</p>
+          </div>
+        </div>
+
+        <p>Un système complet répond toujours à trois questions dans cet ordre: quelle identité est en jeu, quelle preuve a été fournie, puis quelles actions sont autorisées. Si cet ordre n'est pas clair dans le code ou l'architecture, les failles arrivent vite.</p>
+
+        <pre>Requête sensible = 3 vérifications successives
+
+1. Qui parle ?          -> identité
+2. Comment je le sais ? -> preuve d'authentification
+3. Que peut-il faire ?  -> autorisation
+
+Confondre 1, 2 et 3 produit presque toujours une faille logique.</pre>
+      </section>
+
+      <section id="sessions">
+        <h2>2. Sessions et cookies: le socle du web classique</h2>
+        <p>Pour une application web classique, la stratégie la plus simple et la plus robuste reste souvent la session côté serveur. Le navigateur reçoit un cookie opaque, et le serveur conserve l'état authentifié dans son propre stockage.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Ce que contient le cookie</h3>
+            <p>Le cookie doit idéalement contenir un identifiant de session aléatoire, pas les données sensibles elles-mêmes. Le serveur retrouve ensuite l'utilisateur, les dates d'expiration et le contexte de session.</p>
+          </div>
+          <div class="card">
+            <h3>Drapeaux indispensables</h3>
+            <p>Un cookie d'authentification doit être `HttpOnly`, `Secure` et avoir une politique `SameSite` adaptée. Sans cela, vous augmentez fortement l'exposition au vol ou à l'envoi involontaire du cookie.</p>
+          </div>
+          <div class="card">
+            <h3>Rotation et invalidation</h3>
+            <p>Après login, changement de mot de passe ou élévation de privilège, la session doit pouvoir être régénérée. Sinon vous laissez la porte ouverte à la fixation de session.</p>
+          </div>
+          <div class="card">
+            <h3>Avantage majeur</h3>
+            <p>La révocation est simple: on supprime la session côté serveur. C'est un point fort énorme par rapport à des tokens trop longs et incontrôlables.</p>
+          </div>
+        </div>
+
+        <pre>Exemple de flux minimal
+
+POST /login
+- l'application vérifie le mot de passe haché
+- elle crée une session serveur: session_id = "8f3..."
+- elle renvoie:
+
+Set-Cookie: sid=8f3...; HttpOnly; Secure; SameSite=Lax; Path=/
+
+Requête suivante:
+- le navigateur renvoie sid
+- le serveur recharge la session et connaît l'utilisateur</pre>
+
+        <p>Les sessions sont un excellent défaut de départ pour un site rendu côté serveur, un back-office ou une application avec un backend centralisé. Elles sont aussi très adaptées lorsqu'on veut un logout fiable, une révocation immédiate et peu de logique sensible dans le navigateur.</p>
+
+        <ul>
+          <li>Le mot de passe ne doit jamais être stocké en clair: utilisez Argon2id ou, à défaut, bcrypt avec des paramètres actuels.</li>
+          <li>Le cookie doit voyager uniquement en HTTPS, sinon tout le reste du dispositif est déjà compromis.</li>
+          <li>`SameSite=Lax` réduit certains risques CSRF, mais ne remplace pas une stratégie CSRF complète pour les opérations sensibles.</li>
+          <li>Une session inactive trop longue augmente la fenêtre de compromission; une session trop courte dégrade l'usage. Il faut expliciter ce compromis.</li>
+        </ul>
+      </section>
+
+      <section id="jwt">
+        <h2>3. JWT: utile quand on sait pourquoi</h2>
+        <p>Un JWT n'est pas un « meilleur cookie ». C'est un format de token signé, transportable, qui permet à un consommateur de vérifier certaines informations sans rappeler immédiatement l'émetteur. C'est utile dans certains contextes distribués, mais dangereux quand on l'utilise par effet de mode.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Structure</h3>
+            <p>Un JWT contient un en-tête, une charge utile et une signature. La signature garantit l'intégrité, pas la confidentialité. Un JWT signé reste lisible par quiconque le possède.</p>
+          </div>
+          <div class="card">
+            <h3>Bon cas d'usage</h3>
+            <p>Le JWT est pertinent quand plusieurs services doivent valider rapidement un même token émis par une autorité fiable, avec des durées de vie courtes et des clés bien gérées.</p>
+          </div>
+          <div class="card">
+            <h3>Mauvais cas d'usage</h3>
+            <p>Mettre un JWT long en `localStorage` pour « faire moderne » cumule souvent les problèmes: exposition à XSS, révocation pénible, taille inutilement grande et logique de sécurité déplacée dans le front.</p>
+          </div>
+          <div class="card">
+            <h3>Principe de base</h3>
+            <p>Un token doit être court, précis, expirant et destiné à un consommateur identifié. Si vous n'êtes pas capable de dire qui le lira, combien de temps et pour faire quoi, vous n'avez pas encore votre design.</p>
+          </div>
+        </div>
+
+        <pre>Exemple de payload JWT lisible
+
+{
+  "iss": "https://auth.exemple.com",
+  "sub": "user_123",
+  "aud": "api.revlearn.local",
+  "scope": "profile:read notes:write",
+  "iat": 1711548000,
+  "exp": 1711551600
+}
+
+À retenir:
+- signé != chiffré
+- court != forcément sûr
+- sans stratégie de révocation, un token volé reste exploitable jusqu'à expiration</pre>
+
+        <p>Si votre application n'a qu'un seul backend, une session serveur sera souvent plus simple à sécuriser. Le JWT devient intéressant quand vous avez une vraie raison d'assumer ses contraintes: validation distribuée, fédération ou architecture d'API plus large.</p>
+      </section>
+
+      <section id="oauth2">
+        <h2>4. OAuth 2.0: déléguer un accès, pas connecter un humain</h2>
+        <p>OAuth 2.0 est un cadre de délégation. Son but est de permettre à une application d'obtenir un accès limité à une ressource protégée, sans demander à l'utilisateur son mot de passe pour le service tiers. C'est pour cela qu'il faut arrêter de le présenter comme « le protocole de login » tout court.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Resource Owner</h3>
+            <p>La personne ou l'entité qui possède la ressource. Dans beaucoup de cas web, c'est l'utilisateur final qui consent à l'accès.</p>
+          </div>
+          <div class="card">
+            <h3>Client</h3>
+            <p>L'application qui demande l'accès. Ce n'est pas forcément un navigateur: cela peut être un backend, une application mobile, une CLI ou un appareil.</p>
+          </div>
+          <div class="card">
+            <h3>Authorization Server</h3>
+            <p>Le serveur qui authentifie l'utilisateur, recueille le consentement et émet les tokens. C'est lui qui doit être considéré comme l'autorité de confiance.</p>
+          </div>
+          <div class="card">
+            <h3>Resource Server</h3>
+            <p>L'API qui reçoit l'access token et vérifie qu'il donne bien le droit demandé sur la ressource ciblée.</p>
+          </div>
+        </div>
+
+        <p>Le flux moderne à connaître pour une application avec interaction utilisateur est <strong>Authorization Code + PKCE</strong>. C'est lui qu'il faut retenir en priorité pour les applis web modernes, mobiles et SPA correctement conçues.</p>
+
+        <ol>
+          <li>Le client redirige l'utilisateur vers l'authorization server avec un `state`, un `code_challenge` et les scopes demandés.</li>
+          <li>L'utilisateur s'authentifie chez le fournisseur et donne son consentement.</li>
+          <li>Le fournisseur renvoie un `code` au client via une `redirect_uri` strictement enregistrée.</li>
+          <li>Le client échange ce `code` contre un token au point `/token` en présentant le `code_verifier` correspondant au PKCE.</li>
+          <li>Le client utilise ensuite l'access token pour appeler l'API cible.</li>
+          <li>Le `state` protège le contexte de la redirection; le PKCE protège l'échange de code contre l'interception.</li>
+        </ol>
+
+        <pre>Éléments critiques du flux Authorization Code + PKCE
+
+GET /authorize?
+  response_type=code
+  client_id=revlearn-web
+  redirect_uri=https://app.exemple.com/callback
+  scope=openid profile email
+  state=RANDOM_CSRF_VALUE
+  code_challenge=BASE64URL(...)
+  code_challenge_method=S256
+
+POST /token
+  grant_type=authorization_code
+  code=...
+  code_verifier=...
+  redirect_uri=https://app.exemple.com/callback</pre>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Authorization Code + PKCE</h3>
+            <p>Le flux à privilégier pour les applications avec utilisateur. C'est le standard moderne, compatible avec des clients publics et bien meilleur que les anciens flux implicites.</p>
+          </div>
+          <div class="card">
+            <h3>Client Credentials</h3>
+            <p>À utiliser pour du service-à-service. Ici il n'y a pas d'utilisateur final: le client agit pour lui-même auprès d'une API.</p>
+          </div>
+          <div class="card">
+            <h3>Device Authorization</h3>
+            <p>Utile pour un appareil qui n'a pas de clavier ou d'interface web complète, par exemple une TV ou un terminal dédié.</p>
+          </div>
+          <div class="card">
+            <h3>Flux à éviter</h3>
+            <p>L'Implicit Flow et le Resource Owner Password Credentials appartiennent à une ancienne époque. Ils doivent être évités sauf contrainte historique très documentée.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="oidc">
+        <h2>5. OpenID Connect: la couche identité au-dessus d'OAuth 2.0</h2>
+        <p>OAuth 2.0 délègue un accès. OpenID Connect ajoute une couche d'identité. C'est ce qui permet à votre application de savoir quel utilisateur s'est authentifié chez Google, Microsoft, Auth0 ou un autre fournisseur compatible.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>ID Token</h3>
+            <p>L'ID token parle au client de l'identité authentifiée: sujet, émetteur, audience, instant d'authentification et parfois quelques claims de profil. Il n'est pas destiné à appeler votre API métier.</p>
+          </div>
+          <div class="card">
+            <h3>Access Token</h3>
+            <p>L'access token est destiné au resource server. Son rôle est de porter un droit d'accès, pas d'être la fiche d'identité de l'utilisateur dans toute l'application.</p>
+          </div>
+          <div class="card">
+            <h3>Claims et scopes</h3>
+            <p>Les scopes comme `openid`, `profile` ou `email` demandent des informations précises. Les claims obtenus doivent être traités comme des données contractuelles, pas comme un fourre-tout improvisé.</p>
+          </div>
+          <div class="card">
+            <h3>Rattachement local</h3>
+            <p>Dans votre base, vous devez lier l'utilisateur local à l'identité fédérée via une clé stable comme `iss + sub`, pas via une simple adresse email qui peut changer ou être ambiguë.</p>
+          </div>
+        </div>
+
+        <pre>Ne mélangez pas les deux
+
+ID Token
+- prouve l'authentification auprès du client
+- audience = votre application cliente
+
+Access Token
+- prouve une autorisation auprès d'une API
+- audience = l'API cible
+
+Prendre un ID token pour appeler une API est une erreur de conception.</pre>
+
+        <p>Quand un bouton « Se connecter avec X » existe, vous êtes presque toujours dans un cas OpenID Connect. Le fournisseur gère l'authentification et vous recevez ensuite une identité fédérée que votre application doit rattacher proprement à un compte local ou à un modèle de provisionnement.</p>
+      </section>
+
+      <section id="securite">
+        <h2>6. Erreurs fréquentes et contremesures</h2>
+        <p>Les fautes graves sont rarement théoriques. Elles apparaissent dans des choix d'implémentation concrets: mauvais stockage, redirections trop permissives, tokens trop longs ou contrôles absents sur les changements d'état sensibles.</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Stocker des tokens dans `localStorage` sans vraie raison</h3>
+            <p>Si votre front est exposé à XSS, un token lisible par JavaScript est facile à voler. Quand c'est possible, préférez un cookie `HttpOnly` ou une architecture BFF.</p>
+          </div>
+          <div class="card">
+            <h3>Autoriser des `redirect_uri` floues</h3>
+            <p>Le callback OAuth/OIDC doit correspondre exactement à une URI enregistrée. Les comparaisons partielles ou avec wildcards ouvrent la porte au vol de code ou de token.</p>
+          </div>
+          <div class="card">
+            <h3>Ignorer `state` et PKCE</h3>
+            <p>Sans `state`, vous affaiblissez la défense de contexte contre certaines attaques de redirection. Sans PKCE, vous exposez l'échange de code, surtout pour les clients publics.</p>
+          </div>
+          <div class="card">
+            <h3>Confondre authentification et autorisation</h3>
+            <p>Un utilisateur connecté ne doit pas pouvoir modifier n'importe quelle ressource. Chaque endpoint sensible doit vérifier l'identité, puis la permission exacte.</p>
+          </div>
+          <div class="card">
+            <h3>Oublier la rotation de session</h3>
+            <p>Conserver le même identifiant avant et après login peut permettre une fixation de session. Régénérez la session quand le niveau de confiance change.</p>
+          </div>
+          <div class="card">
+            <h3>Pas de stratégie de révocation</h3>
+            <p>Un refresh token volé ou une session compromise doivent pouvoir être révoqués. Si votre architecture ne prévoit pas ce cas, elle n'est pas prête pour la production.</p>
+          </div>
+        </div>
+
+        <pre>Checklist avant mise en production
+
+- HTTPS partout, sans exception
+- mots de passe hachés avec Argon2id ou bcrypt
+- cookie d'authentification: HttpOnly + Secure + SameSite
+- rotation de session après login et actions à privilège
+- callbacks OAuth/OIDC strictement enregistrés
+- validation de state, nonce et PKCE quand nécessaires
+- tokens courts, scopes minimaux, audience explicite
+- journalisation des logins, refus, révocations et anomalies</pre>
+      </section>
+
+      <section id="atelier">
+        <h2>7. Atelier guidé: concevoir un système crédible</h2>
+        <p>Voici un mini-projet utile pour vérifier que vous avez réellement compris le cours. L'objectif n'est pas d'empiler des buzzwords, mais de justifier chaque mécanisme choisi.</p>
+
+        <ol>
+          <li>Créez une authentification email/mot de passe avec stockage des mots de passe en Argon2id et politique de verrouillage raisonnable après trop d'échecs.</li>
+          <li>Après login, créez une session serveur et renvoyez un cookie `HttpOnly`, `Secure`, `SameSite=Lax`.</li>
+          <li>Protégez une route `/me` et une route `/admin`, avec un contrôle d'autorisation distinct du contrôle de session.</li>
+          <li>Ajoutez un bouton « Se connecter avec Google » via OpenID Connect en Authorization Code + PKCE.</li>
+          <li>Rattachez l'identité fédérée au compte local avec `issuer + subject`, pas avec l'email seul.</li>
+          <li>Implémentez un vrai logout: destruction de la session locale et révocation si des refresh tokens existent.</li>
+        </ol>
+
+        <pre>Architecture cible recommandée
+
+Navigateur
+  -> login local
+  -> cookie de session HttpOnly
+  -> appels au backend
+
+Backend
+  -> valide les mots de passe
+  -> gère les sessions
+  -> applique les permissions
+  -> parle au fournisseur OIDC pour le login fédéré
+
+Fournisseur OIDC
+  -> authentifie l'utilisateur
+  -> émet les tokens nécessaires
+  -> renvoie une identité fédérée exploitable</pre>
+
+        <p>Si vous êtes capable d'expliquer pourquoi cette architecture est préférable à « je mets un JWT partout dans le navigateur », alors vous avez compris l'essentiel du compromis sécurité, maintenabilité et contrôle opérationnel.</p>
+      </section>
+
+      <section id="exercices">
+        <h2>8. Exercices de validation</h2>
+        <p>Ne répondez pas par définition. Répondez en justifiant techniquement votre choix.</p>
+
+        <ol>
+          <li>Pourquoi une session serveur est-elle souvent préférable à un JWT pour un back-office web classique ? Donnez trois raisons concrètes.</li>
+          <li>Expliquez la différence entre `ID token` et `access token`, puis indiquez lequel une API doit accepter et pourquoi.</li>
+          <li>Vous auditez une SPA qui stocke un refresh token long dans `localStorage`. Quel risque principal voyez-vous et quelle alternative proposez-vous ?</li>
+          <li>Décrivez le rôle de `state` et celui de PKCE dans un flux Authorization Code. Pourquoi les deux ne servent-ils pas exactement à la même chose ?</li>
+          <li>Un développeur utilise l'email comme identifiant unique de liaison entre un compte local et un fournisseur OIDC. Pourquoi est-ce insuffisant ?</li>
+          <li>Donnez une séquence de vérifications pour sécuriser une route `POST /users/:id/reset-password` dans une application d'administration.</li>
+        </ol>
+
+        <p>Si vous savez répondre clairement à ces six questions et argumenter vos choix d'architecture, vous avez une base solide pour implémenter un vrai système d'authentification au lieu de recopier un schéma incompris.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>RevLearn, projet d'apprentissage ouvert et accessible.</p>
+    <p style="margin-top: 10px;">
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">Dépôt GitHub</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity/issues" target="_blank" rel="noopener noreferrer">Signaler un problème</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="politique-confidentialite.html">Politique de confidentialité</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="mentions-legales.html">Mentions légales</a>
+    </p>
+  </footer>
+
+</body>
+</html>

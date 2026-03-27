@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialité - RevLearn</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="cours-template.css">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 128 128" width="20" height="20">
+          <path fill="#000" d="M125.4 54.8L73.2 2.6c-3.4-3.4-9-3.4-12.4 0L49 14.4l16.1 16.1c3.1-.7 6.5.2 8.7 2.4 2.8 2.8 3.5 6.8 1.8 10.1l15.1 15.1c3.3-1.6 7.3-1 10.1 1.8 3.9 3.9 3.9 10.2 0 14.1-3.9 3.9-10.2 3.9-14.1 0-2.6-2.6-3.4-6.3-2-9.5l-14-14c-1 3.2-3.7 5.7-7.2 6.5v22c1.8 1.1 3 3 3 5.3 0 3.5-2.8 6.3-6.3 6.3s-6.3-2.8-6.3-6.3c0-2.3 1.2-4.2 3-5.3v-22c-3.5-.8-6.2-3.4-7.2-6.5l-14 14c1.4 3.2.6 6.9-2 9.5-3.9 3.9-10.2 3.9-14.1 0-3.9-3.9-3.9-10.2 0-14.1 2.8-2.8 6.8-3.4 10.1-1.8l15.1-15.1c-1.6-3.3-1-7.3 1.8-10.1 2.2-2.2 5.6-3.1 8.7-2.4l-16.1-16.1-23.4 23.4c-3.4 3.4-3.4 9 0 12.4l52.2 52.2c3.4 3.4 9 3.4 12.4 0l52.2-52.2c3.4-3.4 3.4-8.9 0-12.3z"/>
+        </svg>
+        RevLearn
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Catalogue</a>
+        <a href="nouveautes.html">Nouveautés</a>
+        <a href="#apercu" class="active">Confidentialité</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h4>Sommaire</h4>
+      <nav>
+        <a href="#apercu">Aperçu</a>
+        <a href="#donnees">Données traitées</a>
+        <a href="#tiers">Ressources tierces</a>
+        <a href="#stockage">Stockage local</a>
+        <a href="#choix">Vos choix</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <h4 style="margin-top: 40px;">Repères</h4>
+      <div class="meta-pills">
+        <span class="pill">Information</span>
+        <span class="pill">Site statique</span>
+        <span class="pill">27 mars 2026</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header id="apercu">
+        <h1><i class="fa-solid fa-user-shield" style="margin-right: 12px; color: var(--text-muted);"></i>Politique de confidentialité</h1>
+        <p class="lead">RevLearn est un site statique. Cette page explique quelles données peuvent transiter techniquement lorsque vous consultez le site, quelles ressources externes sont chargées et quels choix vous gardez sur votre navigateur.</p>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-label">Type</span>
+            <strong>Information générale</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Dernière mise à jour</span>
+            <strong>27 mars 2026</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Projet</span>
+            <strong>RevLearn</strong>
+          </div>
+        </div>
+      </header>
+
+      <section id="donnees">
+        <h2>1. Données traitées lors de la visite</h2>
+        <p>Le site ne propose pas de création de compte, de formulaire d'inscription ni de paiement. Il ne demande donc pas directement de nom, d'adresse postale ou d'autres informations personnelles de ce type.</p>
+        <p>Comme pour tout site web, des données techniques peuvent néanmoins transiter automatiquement entre votre navigateur et l'hébergement choisi pour le site: adresse IP, type de navigateur, système, date et heure de la requête, pages demandées et informations nécessaires au bon fonctionnement HTTP.</p>
+        <p>Ces données techniques relèvent du fonctionnement normal du web et peuvent être journalisées par l'hébergeur ou par certains services tiers utilisés par la page.</p>
+      </section>
+
+      <section id="tiers">
+        <h2>2. Ressources tierces chargées par le site</h2>
+        <p>Le site charge actuellement des polices depuis <code>fonts.bunny.net</code> et une feuille de style d'icônes depuis <code>cdnjs.cloudflare.com</code>. Lors de ces chargements, votre navigateur contacte ces services, qui peuvent recevoir des données techniques de connexion comme l'adresse IP ou l'agent utilisateur.</p>
+        <p>Le footer du site peut également renvoyer vers GitHub pour consulter le dépôt ou signaler un problème. Si vous cliquez sur ces liens, vous quittez le site et vous êtes alors soumis aux conditions et à la politique de confidentialité du service concerné.</p>
+        <p>RevLearn n'affiche pas, dans l'état actuel du projet, d'outil publicitaire, de pixel marketing ni d'outil d'analytics explicitement intégré au code du site.</p>
+      </section>
+
+      <section id="stockage">
+        <h2>3. Stockage local et fonctionnement hors ligne</h2>
+        <p>Le site enregistre un service worker afin d'améliorer le chargement et de permettre une mise en cache locale de certaines pages et ressources. Cela signifie que votre navigateur peut conserver des copies locales de contenus du site pour accélérer l'affichage ou permettre un usage limité hors ligne.</p>
+        <p>Ce stockage local est technique. Il n'est pas utilisé ici pour du ciblage publicitaire ou du profilage. En revanche, il peut conserver des ressources sur votre appareil jusqu'à ce que vous vidiez les données du site ou que le cache soit renouvelé.</p>
+      </section>
+
+      <section id="choix">
+        <h2>4. Vos choix</h2>
+        <p>Vous pouvez à tout moment effacer les données locales du site depuis les réglages de votre navigateur, désactiver le stockage local, supprimer le service worker ou bloquer certains chargements tiers si vous le souhaitez.</p>
+        <p>Si vous utilisez le site via une version déployée sur GitHub Pages ou une autre plateforme d'hébergement, vous pouvez aussi consulter les politiques propres à cet hébergeur pour comprendre la gestion de ses journaux techniques.</p>
+      </section>
+
+      <section id="contact">
+        <h2>5. Contact</h2>
+        <p>Pour toute question sur le projet ou pour signaler un problème, vous pouvez utiliser le dépôt GitHub du projet: <a href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">AnARCHIS12/learn-gity</a>.</p>
+        <p>Si vous êtes l'éditeur du site et que vous déployez cette version en production, pensez à compléter cette page si vos usages réels diffèrent de ce qui est décrit ici.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>RevLearn, projet d'apprentissage ouvert et accessible.</p>
+    <p style="margin-top: 10px;">
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">Dépôt GitHub</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity/issues" target="_blank" rel="noopener noreferrer">Signaler un problème</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="politique-confidentialite.html">Politique de confidentialité</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="mentions-legales.html">Mentions légales</a>
+    </p>
+  </footer>
+
+</body>
+</html>

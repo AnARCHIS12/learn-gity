@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cours Terminal &amp; Bash</title>
+  <title>Cours CI/CD avec GitLab</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -54,15 +54,15 @@
       <h4 style="margin-top: 40px;">Repères</h4>
       <div class="meta-pills">
         <span class="pill">Outils &amp; DevOps</span>
-        <span class="pill">Intermédiaire</span>
-        <span class="pill">3 heures</span>
+        <span class="pill">Avancé</span>
+        <span class="pill">5 heures</span>
       </div>
     </aside>
 
     <main class="content">
       <header id="introduction">
-        <h1><i class="fa-solid fa-terminal" style="margin-right: 12px; color: var(--text-muted);"></i>Terminal &amp; Bash</h1>
-        <p class="lead">Commandes Unix essentielles et scripts shell pour automatiser comme un administrateur. La compétence utile est opérationnelle: rendre un environnement reproductible, observable et récupérable au lieu d’accumuler des manipulations manuelles.</p>
+        <h1><i class="fa-solid fa-infinity" style="margin-right: 12px; color: var(--text-muted);"></i>CI/CD avec GitLab</h1>
+        <p class="lead">Automatisez vos pipelines build, test et déploiement. Runners, stages et artifacts. La compétence utile est opérationnelle: rendre un environnement reproductible, observable et récupérable au lieu d’accumuler des manipulations manuelles.</p>
 
         <div class="stats-grid">
           <div class="stat">
@@ -71,69 +71,69 @@
           </div>
           <div class="stat">
             <span class="stat-label">Niveau</span>
-            <strong>Intermédiaire</strong>
+            <strong>Avancé</strong>
           </div>
           <div class="stat">
             <span class="stat-label">Temps</span>
-            <strong>3 heures</strong>
+            <strong>5 heures</strong>
           </div>
         </div>
 
         <div class="grid-2">
           <div class="card">
             <h3>Ce que vous allez maîtriser</h3>
-            <p>Comprendre le rôle exact de commandes Unix et de pipes et redirections dans un cas concret.</p>
+            <p>Comprendre le rôle exact de pipelines et stages et de runners dans un cas concret.</p>
           </div>
           <div class="card">
             <h3>Décisions techniques</h3>
-            <p>Savoir quand introduire permissions et quand une solution plus simple reste préférable.</p>
+            <p>Savoir quand introduire artifacts et cache et quand une solution plus simple reste préférable.</p>
           </div>
           <div class="card">
             <h3>Réflexes de qualité</h3>
-            <p>Repérer les erreurs récurrentes autour de scripts Bash avant qu’elles ne se transforment en dette ou en bug.</p>
+            <p>Repérer les erreurs récurrentes autour de déploiement avant qu’elles ne se transforment en dette ou en bug.</p>
           </div>
           <div class="card">
             <h3>Projet de validation</h3>
-            <p>Terminer par automatiser une petite chaîne de traitement de fichiers en ligne de commande.</p>
+            <p>Terminer par mettre en place un pipeline GitLab capable de builder, tester puis déployer une application.</p>
           </div>
         </div>
       </header>
 
       <section id="cadrage">
         <h2>1. Ce que couvre le cours</h2>
-        <p>Sur Terminal &amp; Bash, les notions de commandes Unix, pipes et redirections, permissions et scripts Bash ne valent que si elles rendent l’exécution plus fiable et le diagnostic plus simple. Vous devez pouvoir rejouer le workflow, expliquer chaque étape et savoir quoi observer en cas d’échec.</p>
-        <p>Le fil rouge du cours est simple: terminer par automatiser une petite chaîne de traitement de fichiers en ligne de commande. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
+        <p>Sur CI/CD avec GitLab, les notions de pipelines et stages, runners, artifacts et cache et déploiement ne valent que si elles rendent l’exécution plus fiable et le diagnostic plus simple. Vous devez pouvoir rejouer le workflow, expliquer chaque étape et savoir quoi observer en cas d’échec.</p>
+        <p>Le fil rouge du cours est simple: terminer par mettre en place un pipeline GitLab capable de builder, tester puis déployer une application. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
         <pre>Prérequis conseillés:
 - être à l’aise avec le terminal et les fichiers de configuration
 - savoir exécuter une commande et lire son résultat
 - raisonner en termes de reproductibilité et d’observabilité
 
 À la fin du cours, vous devrez être capable de:
-- expliquer commandes Unix, pipes et redirections, permissions et scripts Bash dans vos propres mots
-- prendre une décision défendable sur permissions
-- vérifier le comportement ou la qualité autour de scripts Bash
-- livrer automatiser une petite chaîne de traitement de fichiers en ligne de commande</pre>
+- expliquer pipelines et stages, runners, artifacts et cache et déploiement dans vos propres mots
+- prendre une décision défendable sur artifacts et cache
+- vérifier le comportement ou la qualité autour de déploiement
+- livrer mettre en place un pipeline GitLab capable de builder, tester puis déployer une application</pre>
       </section>
 
       <section id="concepts">
         <h2>2. Concepts clés</h2>
-        <p>Le cœur du sujet tient dans commandes Unix, pipes et redirections, permissions et scripts Bash. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
+        <p>Le cœur du sujet tient dans pipelines et stages, runners, artifacts et cache et déploiement. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
         <div class="grid-2">
           <div class="card">
-            <h3>commandes Unix</h3>
-            <p>Le rôle opérationnel de commandes Unix dans une chaîne réellement exploitable et rejouable.</p>
+            <h3>pipelines et stages</h3>
+            <p>Le rôle opérationnel de pipelines et stages dans une chaîne réellement exploitable et rejouable.</p>
           </div>
           <div class="card">
-            <h3>pipes et redirections</h3>
-            <p>Ce que pipes et redirections vous fait gagner en reproductibilité, partage, diagnostic ou vitesse de livraison.</p>
+            <h3>runners</h3>
+            <p>Ce que runners vous fait gagner en reproductibilité, partage, diagnostic ou vitesse de livraison.</p>
           </div>
           <div class="card">
-            <h3>permissions</h3>
-            <p>Les erreurs fréquentes quand permissions est ajouté sans stratégie d’observabilité ou de retour arrière.</p>
+            <h3>artifacts et cache</h3>
+            <p>Les erreurs fréquentes quand artifacts et cache est ajouté sans stratégie d’observabilité ou de retour arrière.</p>
           </div>
           <div class="card">
-            <h3>scripts Bash</h3>
-            <p>Comment vérifier que scripts Bash fonctionne en dehors de votre machine et dans la durée.</p>
+            <h3>déploiement</h3>
+            <p>Comment vérifier que déploiement fonctionne en dehors de votre machine et dans la durée.</p>
           </div>
         </div>
         <p>Si vous êtes capable de relier ces quatre briques à un cas concret, d’expliquer leurs compromis et d’identifier ce qu’elles changent réellement dans le résultat final, alors la base du cours est solide.</p>
@@ -144,26 +144,26 @@
         <p>Le plus rentable est d’avancer par incréments: un cas minimal, une structure lisible, puis des raffinements successifs appuyés par des vérifications concrètes.</p>
         <ol>
           <li>Définir le chemin nominal à automatiser ou stabiliser avant d’écrire le moindre fichier de config.</li>
-          <li>Faire tourner une première version minimale autour de commandes Unix et pipes et redirections pour valider les hypothèses.</li>
-          <li>Introduire permissions pour fiabiliser la chaîne, la partager ou la rendre plus maintenable.</li>
-          <li>Observer scripts Bash à l’aide de journaux, sorties de commande, états ou métriques.</li>
-          <li>Terminer par automatiser une petite chaîne de traitement de fichiers en ligne de commande avec une procédure rejouable par une autre personne.</li>
+          <li>Faire tourner une première version minimale autour de pipelines et stages et runners pour valider les hypothèses.</li>
+          <li>Introduire artifacts et cache pour fiabiliser la chaîne, la partager ou la rendre plus maintenable.</li>
+          <li>Observer déploiement à l’aide de journaux, sorties de commande, états ou métriques.</li>
+          <li>Terminer par mettre en place un pipeline GitLab capable de builder, tester puis déployer une application avec une procédure rejouable par une autre personne.</li>
         </ol>
       </section>
 
       <section id="cas-pratique">
         <h2>4. Cas pratique</h2>
         <p>Le cas pratique ci-dessous sert à transformer un sujet souvent appris par copier-coller en chaîne réellement exploitable. Vous devez obtenir quelque chose de rejouable, observable et transmissible.</p>
-        <p>Autrement dit, commandes Unix, pipes et redirections, permissions et scripts Bash ne sont retenus que s’ils rendent l’exploitation plus sûre et le diagnostic plus simple.</p>
+        <p>Autrement dit, pipelines et stages, runners, artifacts et cache et déploiement ne sont retenus que s’ils rendent l’exploitation plus sûre et le diagnostic plus simple.</p>
         <pre>Chaîne minimale à obtenir
 
-Objectif: automatiser une petite chaîne de traitement de fichiers en ligne de commande
+Objectif: mettre en place un pipeline GitLab capable de builder, tester puis déployer une application
 1. source versionnée
-2. première exécution autour de commandes Unix
-3. passage à une configuration plus robuste avec pipes et redirections et permissions
-4. preuve de fonctionnement via scripts Bash
+2. première exécution autour de pipelines et stages
+3. passage à une configuration plus robuste avec runners et artifacts et cache
+4. preuve de fonctionnement via déploiement
 5. procédure de reprise ou de rollback</pre>
-        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de scripts Bash dans le contexte choisi.</p>
+        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de déploiement dans le contexte choisi.</p>
       </section>
 
       <section id="vigilance">
@@ -191,35 +191,35 @@ Objectif: automatiser une petite chaîne de traitement de fichiers en ligne de c
 
       <section id="projet">
         <h2>6. Projet guidé</h2>
-        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de automatiser une petite chaîne de traitement de fichiers en ligne de commande.</p>
+        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de mettre en place un pipeline GitLab capable de builder, tester puis déployer une application.</p>
         <ol>
           <li>Fixez un périmètre volontairement réduit afin de finir proprement et de pouvoir expliquer chaque décision.</li>
-          <li>Introduisez commandes Unix et pipes et redirections sur un cas simple avant d’ajouter davantage de surface.</li>
-          <li>Ajoutez ensuite permissions au moment où son intérêt devient visible dans le flux ou la structure.</li>
-          <li>Vérifiez explicitement scripts Bash avec un test, une mesure, une revue, un benchmark ou une observation.</li>
-          <li>Concluez par automatiser une petite chaîne de traitement de fichiers en ligne de commande avec une courte note sur les arbitrages, les limites et la suite logique.</li>
+          <li>Introduisez pipelines et stages et runners sur un cas simple avant d’ajouter davantage de surface.</li>
+          <li>Ajoutez ensuite artifacts et cache au moment où son intérêt devient visible dans le flux ou la structure.</li>
+          <li>Vérifiez explicitement déploiement avec un test, une mesure, une revue, un benchmark ou une observation.</li>
+          <li>Concluez par mettre en place un pipeline GitLab capable de builder, tester puis déployer une application avec une courte note sur les arbitrages, les limites et la suite logique.</li>
         </ol>
         <pre>Définition de terminé
 
-Sujet: automatiser une petite chaîne de traitement de fichiers en ligne de commande
-Objectif pédagogique: consolider Terminal &amp; Bash
+Sujet: mettre en place un pipeline GitLab capable de builder, tester puis déployer une application
+Objectif pédagogique: consolider CI/CD avec GitLab
 Le travail doit montrer:
-- une compréhension exploitable de commandes Unix
-- une mise en œuvre lisible autour de pipes et redirections
-- une décision argumentée concernant permissions
-- une vérification explicite sur scripts Bash</pre>
+- une compréhension exploitable de pipelines et stages
+- une mise en œuvre lisible autour de runners
+- une décision argumentée concernant artifacts et cache
+- une vérification explicite sur déploiement</pre>
       </section>
 
       <section id="exercices">
         <h2>7. Exercices</h2>
         <p>Ne répondez pas par définition. Le bon niveau est celui d’une personne capable d’argumenter, de comparer et de dire ce qu’elle vérifierait en pratique.</p>
         <ol>
-          <li>Expliquez le rôle exact de commandes Unix dans une chaîne reproductible.</li>
-          <li>Donnez une situation problématique autour de pipes et redirections et expliquez comment elle augmente le risque opérationnel.</li>
-          <li>Comment vérifieriez-vous que permissions fonctionne réellement sur un autre environnement que le vôtre ?</li>
-          <li>Que faut-il observer pour diagnostiquer un échec autour de scripts Bash ?</li>
+          <li>Expliquez le rôle exact de pipelines et stages dans une chaîne reproductible.</li>
+          <li>Donnez une situation problématique autour de runners et expliquez comment elle augmente le risque opérationnel.</li>
+          <li>Comment vérifieriez-vous que artifacts et cache fonctionne réellement sur un autre environnement que le vôtre ?</li>
+          <li>Que faut-il observer pour diagnostiquer un échec autour de déploiement ?</li>
           <li>Décrivez une stratégie simple de reprise ou de rollback.</li>
-          <li>Présentez les livrables minimums attendus pour automatiser une petite chaîne de traitement de fichiers en ligne de commande.</li>
+          <li>Présentez les livrables minimums attendus pour mettre en place un pipeline GitLab capable de builder, tester puis déployer une application.</li>
         </ol>
       </section>
     </main>

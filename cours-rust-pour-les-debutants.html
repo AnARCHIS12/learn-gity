@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours Rust pour les Débutants</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="cours-template.css">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 128 128" width="20" height="20">
+          <path fill="#000" d="M125.4 54.8L73.2 2.6c-3.4-3.4-9-3.4-12.4 0L49 14.4l16.1 16.1c3.1-.7 6.5.2 8.7 2.4 2.8 2.8 3.5 6.8 1.8 10.1l15.1 15.1c3.3-1.6 7.3-1 10.1 1.8 3.9 3.9 3.9 10.2 0 14.1-3.9 3.9-10.2 3.9-14.1 0-2.6-2.6-3.4-6.3-2-9.5l-14-14c-1 3.2-3.7 5.7-7.2 6.5v22c1.8 1.1 3 3 3 5.3 0 3.5-2.8 6.3-6.3 6.3s-6.3-2.8-6.3-6.3c0-2.3 1.2-4.2 3-5.3v-22c-3.5-.8-6.2-3.4-7.2-6.5l-14 14c1.4 3.2.6 6.9-2 9.5-3.9 3.9-10.2 3.9-14.1 0-3.9-3.9-3.9-10.2 0-14.1 2.8-2.8 6.8-3.4 10.1-1.8l15.1-15.1c-1.6-3.3-1-7.3 1.8-10.1 2.2-2.2 5.6-3.1 8.7-2.4l-16.1-16.1-23.4 23.4c-3.4 3.4-3.4 9 0 12.4l52.2 52.2c3.4 3.4 9 3.4 12.4 0l52.2-52.2c3.4-3.4 3.4-8.9 0-12.3z"/>
+        </svg>
+        RevLearn
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Catalogue</a>
+        <a href="nouveautes.html">Nouveautés</a>
+        <a href="#introduction" class="active">Cours</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h4>Sommaire</h4>
+      <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#cadrage">Ce que couvre le cours</a>
+        <a href="#concepts">Concepts clés</a>
+        <a href="#progression">Progression recommandée</a>
+        <a href="#cas-pratique">Cas pratique</a>
+        <a href="#vigilance">Erreurs fréquentes</a>
+        <a href="#projet">Projet guidé</a>
+        <a href="#exercices">Exercices</a>
+      </nav>
+
+      <h4 style="margin-top: 40px;">Repères</h4>
+      <div class="meta-pills">
+        <span class="pill">Langages de Programmation</span>
+        <span class="pill">Avancé</span>
+        <span class="pill">8 heures</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header id="introduction">
+        <h1><i class="fa-solid fa-gear" style="margin-right: 12px; color: var(--text-muted);"></i>Rust pour les Débutants</h1>
+        <p class="lead">Ownership, borrowing, lifetimes et sécurité mémoire. Pourquoi Rust change tout. On ne vise pas seulement la syntaxe. Il faut comprendre ce que le langage change dans le modèle mental, l’organisation du code, le debug et la maintenance.</p>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-label">Domaine</span>
+            <strong>Langages de Programmation</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Niveau</span>
+            <strong>Avancé</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Temps</span>
+            <strong>8 heures</strong>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Ce que vous allez maîtriser</h3>
+            <p>Comprendre le rôle exact de ownership et de borrowing dans un cas concret.</p>
+          </div>
+          <div class="card">
+            <h3>Décisions techniques</h3>
+            <p>Savoir quand introduire lifetimes et quand une solution plus simple reste préférable.</p>
+          </div>
+          <div class="card">
+            <h3>Réflexes de qualité</h3>
+            <p>Repérer les erreurs récurrentes autour de Result et traits avant qu’elles ne se transforment en dette ou en bug.</p>
+          </div>
+          <div class="card">
+            <h3>Projet de validation</h3>
+            <p>Terminer par écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété.</p>
+          </div>
+        </div>
+      </header>
+
+      <section id="cadrage">
+        <h2>1. Ce que couvre le cours</h2>
+        <p>Sur Rust pour les Débutants, vous devez relier ownership, borrowing, lifetimes et Result et traits au comportement réel du programme. Cela veut dire écrire, exécuter, tester, déboguer et parfois profiler avant de considérer que le sujet est acquis.</p>
+        <p>Le fil rouge du cours est simple: terminer par écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété. Ce mini-projet force à prendre des décisions, à vérifier les comportements et à rendre vos arbitrages lisibles pour quelqu’un d’autre que vous.</p>
+        <pre>Prérequis conseillés:
+- savoir écrire de petites fonctions
+- être prêt à déboguer et relire son code
+- comprendre qu’un langage s’apprend avec ses outils autant qu’avec sa syntaxe
+
+À la fin du cours, vous devrez être capable de:
+- expliquer ownership, borrowing, lifetimes et Result et traits dans vos propres mots
+- prendre une décision défendable sur lifetimes
+- vérifier le comportement ou la qualité autour de Result et traits
+- livrer écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété</pre>
+      </section>
+
+      <section id="concepts">
+        <h2>2. Concepts clés</h2>
+        <p>Le cœur du sujet tient dans ownership, borrowing, lifetimes et Result et traits. L’objectif n’est pas de les apprendre comme une liste, mais de comprendre comment ils s’enchaînent dans un vrai travail technique.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>ownership</h3>
+            <p>Ce que ownership change dans le modèle mental du langage et dans la façon d’écrire le code.</p>
+          </div>
+          <div class="card">
+            <h3>borrowing</h3>
+            <p>Les bénéfices et les pièges de borrowing dans un projet réel: lisibilité, performance, sécurité ou découpage.</p>
+          </div>
+          <div class="card">
+            <h3>lifetimes</h3>
+            <p>Quand lifetimes devient réellement utile et quand une solution plus simple reste préférable.</p>
+          </div>
+          <div class="card">
+            <h3>Result et traits</h3>
+            <p>Ce qu’il faut tester ou observer pour considérer Result et traits comme maîtrisé au-delà de la simple syntaxe.</p>
+          </div>
+        </div>
+        <p>Si vous êtes capable de relier ces quatre briques à un cas concret, d’expliquer leurs compromis et d’identifier ce qu’elles changent réellement dans le résultat final, alors la base du cours est solide.</p>
+      </section>
+
+      <section id="progression">
+        <h2>3. Progression recommandée</h2>
+        <p>Le plus rentable est d’avancer par incréments: un cas minimal, une structure lisible, puis des raffinements successifs appuyés par des vérifications concrètes.</p>
+        <ol>
+          <li>Écrire un exemple minimal qui compile ou s’exécute pour valider l’outil et le runtime.</li>
+          <li>Introduire ownership et borrowing dans du code lisible, sur des cas assez petits pour comprendre leurs effets.</li>
+          <li>Structurer ensuite le projet autour de lifetimes et de responsabilités bien nommées.</li>
+          <li>Utiliser tests, debugger ou profiler pour vérifier Result et traits au lieu de se fier à l’intuition.</li>
+          <li>Conclure par écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété avec une structure propre et des choix explicités.</li>
+        </ol>
+      </section>
+
+      <section id="cas-pratique">
+        <h2>4. Cas pratique</h2>
+        <p>Le cas pratique ci-dessous oblige à sortir du cours purement théorique: il faut écrire du code, le découper, le faire tourner puis vérifier qu’il se comporte comme prévu.</p>
+        <p>C’est dans ce cadre que ownership, borrowing, lifetimes et Result et traits prennent leur vraie valeur, parce qu’ils transforment la manière dont vous codez et déboguez.</p>
+        <pre>Structure de mini-projet
+
+Sujet: écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété
+Entrée
+- un cas simple qui oblige à utiliser ownership et borrowing
+Organisation
+- un découpage lisible autour de lifetimes
+Vérification
+- test, debug ou observation centrés sur Result et traits</pre>
+        <p>Ce cas pratique doit être traité comme une preuve de compréhension: vous devez rendre visibles les choix, les hypothèses et la manière dont vous vérifiez concrètement l'effet de Result et traits dans le contexte choisi.</p>
+      </section>
+
+      <section id="vigilance">
+        <h2>5. Erreurs fréquentes</h2>
+        <p>Les problèmes coûteux reviennent rarement parce qu’une notion manque au programme. Ils reviennent surtout parce qu’une notion est mal située, mal vérifiée ou introduite sans nécessité.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Combattre ownership au lieu de le comprendre</h3>
+            <p>Rust vous force à rendre explicite la durée de vie et le partage de vos données; il ne le fait pas par caprice.</p>
+          </div>
+          <div class="card">
+            <h3>Utiliser clone pour faire taire le compilateur</h3>
+            <p>Copier sans réfléchir peut masquer un problème de design ou dégrader les performances inutilement.</p>
+          </div>
+          <div class="card">
+            <h3>Reproduire les réflexes d’un autre langage</h3>
+            <p>Les patterns valables en Python, JavaScript ou C ne se transposent pas toujours proprement en Rust.</p>
+          </div>
+          <div class="card">
+            <h3>Redouter les messages du compilateur</h3>
+            <p>Savoir lire les diagnostics fait partie de l’apprentissage réel de Rust.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projet">
+        <h2>6. Projet guidé</h2>
+        <p>Le projet de fin n’est pas un exercice décoratif. Il sert à vérifier que vous savez passer du concept à une mise en œuvre défendable autour de écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété.</p>
+        <ol>
+          <li>Fixez un périmètre volontairement réduit afin de finir proprement et de pouvoir expliquer chaque décision.</li>
+          <li>Introduisez ownership et borrowing sur un cas simple avant d’ajouter davantage de surface.</li>
+          <li>Ajoutez ensuite lifetimes au moment où son intérêt devient visible dans le flux ou la structure.</li>
+          <li>Vérifiez explicitement Result et traits avec un test, une mesure, une revue, un benchmark ou une observation.</li>
+          <li>Concluez par écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété avec une courte note sur les arbitrages, les limites et la suite logique.</li>
+        </ol>
+        <pre>Définition de terminé
+
+Sujet: écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété
+Objectif pédagogique: consolider Rust pour les Débutants
+Le travail doit montrer:
+- une compréhension exploitable de ownership
+- une mise en œuvre lisible autour de borrowing
+- une décision argumentée concernant lifetimes
+- une vérification explicite sur Result et traits</pre>
+      </section>
+
+      <section id="exercices">
+        <h2>7. Exercices</h2>
+        <p>Ne répondez pas par définition. Le bon niveau est celui d’une personne capable d’argumenter, de comparer et de dire ce qu’elle vérifierait en pratique.</p>
+        <ol>
+          <li>Expliquez ce que ownership change dans la manière d’écrire ou de relire le code.</li>
+          <li>Comparez borrowing avec une solution plus naïve et dites dans quel cas chacune est préférable.</li>
+          <li>Décrivez le découpage de code le plus sain pour mettre en œuvre lifetimes.</li>
+          <li>Quel test, outil ou debugger utiliseriez-vous pour sécuriser Result et traits ?</li>
+          <li>Montrez comment vous passeriez d’un exemple minimal à une structure de projet propre.</li>
+          <li>Donnez la définition de terminé pour écrire un petit outil CLI Rust qui prouve la maîtrise du modèle de propriété.</li>
+        </ol>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>RevLearn, projet d'apprentissage ouvert et accessible.</p>
+    <p style="margin-top: 10px;">
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity" target="_blank" rel="noopener noreferrer">Dépôt GitHub</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="https://github.com/AnARCHIS12/learn-gity/issues" target="_blank" rel="noopener noreferrer">Signaler un problème</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="politique-confidentialite.html">Politique de confidentialité</a>
+      ·
+      <a style="text-decoration: underline; text-underline-offset: 3px;" href="mentions-legales.html">Mentions légales</a>
+    </p>
+  </footer>
+
+</body>
+</html>
